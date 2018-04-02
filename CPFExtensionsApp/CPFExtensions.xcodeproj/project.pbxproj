@@ -10,7 +10,7 @@
 		933DFE3C20722AE000D24830 /* UIView+Badge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 933DFE3B20722AE000D24830 /* UIView+Badge.swift */; };
 		933DFE3E20722E4C00D24830 /* UIScrollView+Adjust.swift in Sources */ = {isa = PBXBuildFile; fileRef = 933DFE3D20722E4C00D24830 /* UIScrollView+Adjust.swift */; };
 		933DFE4020722EFD00D24830 /* UIScrollView+Cpf.swift in Sources */ = {isa = PBXBuildFile; fileRef = 933DFE3F20722EFD00D24830 /* UIScrollView+Cpf.swift */; };
-		933DFE4220722F6B00D24830 /* CPFExtension.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 933DFE4120722F6B00D24830 /* CPFExtension.podspec */; };
+		933DFE44207230A100D24830 /* CPFExtension.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 933DFE43207230A100D24830 /* CPFExtension.podspec */; };
 		934C3DF3206A3C33002F9423 /* UIFont+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 934C3DF2206A3C33002F9423 /* UIFont+Convenience.swift */; };
 		93634595205A724A00C22B0A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93634594205A724A00C22B0A /* AppDelegate.swift */; };
 		93634597205A724A00C22B0A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93634596205A724A00C22B0A /* ViewController.swift */; };
@@ -67,7 +67,7 @@
 		933DFE3B20722AE000D24830 /* UIView+Badge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Badge.swift"; sourceTree = "<group>"; };
 		933DFE3D20722E4C00D24830 /* UIScrollView+Adjust.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScrollView+Adjust.swift"; sourceTree = "<group>"; };
 		933DFE3F20722EFD00D24830 /* UIScrollView+Cpf.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScrollView+Cpf.swift"; sourceTree = "<group>"; };
-		933DFE4120722F6B00D24830 /* CPFExtension.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; fileEncoding = 4; name = CPFExtension.podspec; path = CPFExtensionsApp/CPFExtension.podspec; sourceTree = "<group>"; };
+		933DFE43207230A100D24830 /* CPFExtension.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CPFExtension.podspec; sourceTree = "<group>"; };
 		934C3DF2206A3C33002F9423 /* UIFont+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Convenience.swift"; sourceTree = "<group>"; };
 		93634591205A724A00C22B0A /* CPFExtensions.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CPFExtensions.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		93634594205A724A00C22B0A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -234,7 +234,7 @@
 		936345C3205A72C600C22B0A /* PodSpec */ = {
 			isa = PBXGroup;
 			children = (
-				933DFE4120722F6B00D24830 /* CPFExtension.podspec */,
+				933DFE43207230A100D24830 /* CPFExtension.podspec */,
 			);
 			name = PodSpec;
 			path = ..;
@@ -383,7 +383,7 @@
 			files = (
 				9363459F205A724A00C22B0A /* LaunchScreen.storyboard in Resources */,
 				9363459C205A724A00C22B0A /* Assets.xcassets in Resources */,
-				933DFE4220722F6B00D24830 /* CPFExtension.podspec in Resources */,
+				933DFE44207230A100D24830 /* CPFExtension.podspec in Resources */,
 				9363459A205A724A00C22B0A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
