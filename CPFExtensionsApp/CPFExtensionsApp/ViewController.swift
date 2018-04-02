@@ -14,11 +14,11 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        let weights: [UIFont.Weight: String] = [.ultraLight: "ultraLight", .thin: "thin", .light: "light", .regular: "regular", .medium: "medium", .semibold: "semibold", .bold: "bold", .heavy: "heavy", .black: "black"]
+        let weights: [CPFFontName.Weight: String] = [.ultraLight: "ultraLight", .thin: "thin", .light: "light", .regular: "regular", .medium: "medium", .semibold: "semibold", .bold: "bold", .heavy: "heavy", .black: "black"]
         
         for (aWeight, aText) in weights {
-            print(aText, UIFont.cpf_font(name: .pingFang(aWeight), size: 12))
-            print(aText, UIFont.cpf_font(name: .helveticaNeue(aWeight), size: 12))
+            print(aText, UIFont.cpf_font(name: .pingFang(aWeight), size: 12.0))
+            print(aText, UIFont.cpf_font(name: .helveticaNeue(aWeight), size: 12.0))
 
         }
     }
@@ -31,7 +31,7 @@ class ViewController: UIViewController {
 
 
 extension CPFFontName {
-    static func helveticaNeue(_ weight: UIFont.Weight = .regular) -> CPFFontName {
+    static func helveticaNeue(_ weight: CPFFontName.Weight = .regular) -> CPFFontName {
         let baseName = "HelveticaNeue"
         var suffix = self.suffix(of: weight)
         switch weight {

@@ -25,10 +25,14 @@ public extension UIFont {
 }
 
 public struct CPFFontName {
+    // 由于UIFont.Weight枚举仅支持iOS8.2以上，实现自定义的枚举
+    public enum Weight{
+        case ultraLight, thin, light, regular, medium, semibold, bold, heavy, black
+    }
     let fontName: String
     
     // PingFang SC
-    public static func pingFang(_ weight: UIFont.Weight = .regular) -> CPFFontName {
+    public static func pingFang(_ weight: CPFFontName.Weight = .regular) -> CPFFontName {
         let baseName = "PingFangSC"
         var suffix = self.suffix(of: weight)
         switch weight {
@@ -46,8 +50,8 @@ public struct CPFFontName {
         return CPFFontName(fontName: finalName)
     }
     
-    public static func suffix(of weight: UIFont.Weight) -> String {
-        let map: [UIFont.Weight: String] = [
+    public static func suffix(of weight: CPFFontName.Weight) -> String {
+        let map: [CPFFontName.Weight: String] = [
             .ultraLight: "UltraLight",
             .thin: "Thin",
             .light: "Light",
