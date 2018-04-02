@@ -9,7 +9,7 @@
 import UIKit
 
 // Render
-public extension UIImage {
+extension UIImage {
     /// 图像渲染
     public class func cpf_render(size: CGSize, opaque: Bool = false, scale: CGFloat? = nil, _ renderHandler: () -> Void) -> UIImage? {
         var image: UIImage? = nil
@@ -33,7 +33,7 @@ public extension UIImage {
 }
 
 // Color
-public extension UIImage {
+extension UIImage {
     /// 根据颜色生成图像
     ///
     /// - Parameters:
@@ -65,7 +65,7 @@ public extension UIImage {
 }
 
 // Gradient
-public extension UIImage {
+extension UIImage {
     
     /// 生成渐变色图像
     ///
@@ -142,7 +142,7 @@ public extension UIImage {
 }
 
 // Size
-public extension UIImage {
+extension UIImage {
     /// 调整图片大小(仅用于缩小图片)
     /// 结果图片大小根据指定目标尺寸，使用scaleAspectFit方式计算得到
     ///

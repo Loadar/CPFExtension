@@ -8,7 +8,7 @@
 
 import UIKit
 
-public extension UIView {
+extension UIView {
     public func cpf_snapshot(opaque: Bool = false) -> UIImage? {
         let size = self.bounds.size
         return UIImage.cpf_render(size: size, opaque: opaque) {
@@ -22,7 +22,7 @@ public extension UIView {
     }
 }
 
-public extension UIView {
+extension UIView {
     private struct CPFSnapshotConfigure {
         static var snapshotKey = 0
     }

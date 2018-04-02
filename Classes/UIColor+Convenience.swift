@@ -8,7 +8,7 @@
 
 import UIKit
 
-public extension UIColor {
+extension UIColor {
     /// 十六进制颜色字符串生成UIColor对象
     public convenience init(_ string: String) {
         let length = string.lengthOfBytes(using: .utf8)

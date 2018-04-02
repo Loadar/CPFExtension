@@ -8,7 +8,7 @@
 
 import UIKit
 
-public extension CGSize {
+extension CGSize {
     /// width、height使用默认值0
     public static func cpf(width: CGFloat = 0, height: CGFloat = 0) -> CGSize {
         return CGSize(width: width, height: height)
@@ -21,7 +21,7 @@ public extension CGSize {
 }
 
 // Size变换
-public extension CGSize {
+extension CGSize {
     /// width、height按相同比例缩放
     public func cpf_scale(with scale: CGFloat) -> CGSize {
         var newSize = self

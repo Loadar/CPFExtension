@@ -8,7 +8,7 @@
 
 import UIKit
 
-public class Util {
+class Util {
     public static let shared = Util()
     private init() {}
     

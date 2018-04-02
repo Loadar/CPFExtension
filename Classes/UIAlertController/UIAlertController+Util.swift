@@ -8,7 +8,7 @@
 
 import UIKit
 
-public extension UIAlertController {
+extension UIAlertController {
     public class var cpf_alert: UIAlertController {
         return UIAlertController(title: nil, message: nil, preferredStyle: .alert)
     }

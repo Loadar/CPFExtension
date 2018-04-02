@@ -8,7 +8,7 @@
 
 import UIKit
 
-public extension UIView {
+extension UIView {
     private struct CPFProgressConfigure {
         static var progressKey = 335
     }

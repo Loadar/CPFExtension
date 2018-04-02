@@ -10,7 +10,7 @@ import UIKit
 import CPFChain
 
 // MARK: -Util
-public extension Cpf where Base: UIAlertController {
+extension Cpf where Base: UIAlertController {
     @discardableResult
     public func title(_ text: String?) -> Cpf {
         base.title = text
