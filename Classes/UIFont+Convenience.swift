@@ -9,7 +9,7 @@
 import UIKit
 
 extension UIFont {
-    public class func cpf_font(name: String? = nil, size: CGFloat) -> UIFont {
+    public class func cpf_font(_ name: String? = nil, size: CGFloat) -> UIFont {
         guard let fontName = name else {
             return UIFont.systemFont(ofSize: size)
         }
@@ -19,8 +19,8 @@ extension UIFont {
         return font
     }
     
-    public class func cpf_font(name: CPFFontName, size: CGFloat) -> UIFont {
-        return self.cpf_font(name: name.fontName, size: size)
+    public class func cpf_font(_ name: CPFFontName, size: CGFloat) -> UIFont {
+        return self.cpf_font(name.fontName, size: size)
     }
 }
 

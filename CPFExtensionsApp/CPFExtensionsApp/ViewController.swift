@@ -17,8 +17,8 @@ class ViewController: UIViewController {
         let weights: [CPFFontName.Weight: String] = [.ultraLight: "ultraLight", .thin: "thin", .light: "light", .regular: "regular", .medium: "medium", .semibold: "semibold", .bold: "bold", .heavy: "heavy", .black: "black"]
         
         for (aWeight, aText) in weights {
-            print(aText, UIFont.cpf_font(name: .pingFang(aWeight), size: 12.0))
-            print(aText, UIFont.cpf_font(name: .helveticaNeue(aWeight), size: 12.0))
+            print(aText, UIFont.cpf_font(.pingFang(aWeight), size: 12.0))
+            print(aText, UIFont.cpf_font(.helveticaNeue(aWeight), size: 12.0))
 
         }
     }
