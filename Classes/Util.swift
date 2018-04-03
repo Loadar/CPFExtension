@@ -8,7 +8,7 @@
 
 import UIKit
 
-class Util {
+public class Util {
     public static let shared = Util()
     private init() {}
     
@@ -22,11 +22,11 @@ class Util {
     private var statusHeight: CGFloat?
     private var tabBarHeight: CGFloat?
     
-    class var screenRect: CGRect { return UIScreen.main.bounds }
-    class var screenSize: CGSize { return screenRect.size }
-    class var screenWidth: CGFloat { return screenRect.width }
-    class var screenHeight: CGFloat { return screenRect.height }
-    class var statusBarHeight: CGFloat {
+    public class var screenRect: CGRect { return UIScreen.main.bounds }
+    public class var screenSize: CGSize { return screenRect.size }
+    public class var screenWidth: CGFloat { return screenRect.width }
+    public class var screenHeight: CGFloat { return screenRect.height }
+    public class var statusBarHeight: CGFloat {
         if let height = shared.statusHeight { return height }
         let height = UIApplication.shared.statusBarFrame.height
         if height < 1e-6 {
@@ -38,7 +38,7 @@ class Util {
     }
     
     // 根据屏幕尺寸判断是否为iPhoneX
-    class var isIPhoneX: Bool {
+    public class var isIPhoneX: Bool {
         if let status = shared.isIPhoneX { return status }
         let size = screenSize
         let iPhoneXSize = CGSize(width: 375, height: 812)
@@ -47,18 +47,18 @@ class Util {
         return status
     }
     
-    class var topAdjustHeight: CGFloat {
+    public class var topAdjustHeight: CGFloat {
         // iPhoneX顶部控件高度需要调整
         return statusBarHeight - 20
     }
     
-    class var bottomAdjustHeight: CGFloat {
+    public class var bottomAdjustHeight: CGFloat {
         // iPhoneX底部非列表时，需要留34pt空间
         return isIPhoneX ? 34 : 0
     }
     
     // 取root viewController处理
-    class var tabBarHeight: CGFloat {
+    public class var tabBarHeight: CGFloat {
         if let height = shared.tabBarHeight { return height }
         guard let controller = UIApplication.shared.keyWindow?.rootViewController as? UITabBarController else { return 0 }
         let rect = controller.tabBar.bounds
