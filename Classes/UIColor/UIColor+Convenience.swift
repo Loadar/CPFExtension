@@ -10,6 +10,8 @@ import UIKit
 
 extension UIColor {
     /// 十六进制颜色字符串生成UIColor对象
+    ///
+    /// - Parameter string: 十六进制字符串，长度为6或8(包含alpha)
     public convenience init(_ string: String) {
         let length = string.lengthOfBytes(using: .utf8)
         guard (length == 6 || length == 8) else {
@@ -42,33 +44,54 @@ extension UIColor {
         self.init(red: CGFloat(red) / 255.0, green: CGFloat(green) / 255.0, blue: CGFloat(blue) / 255.0, alpha: CGFloat(alpha) / 255.0)
     }
     
-    /// 十六进制字符串生成UIColor对象
-    public class func cpf(hex string: String) -> UIColor {
-        return UIColor(string)
+    /// 十六进制颜色字符串生成UIColor对象
+    ///
+    /// - Parameters:
+    ///   - text: 十六进制字符串，长度为6或8(包含alpha)
+    ///   - alpha: 额外附加的alpha，若指定此项值，会替代text内可能包含的alpha
+    /// - Returns: UIColor对象
+    public class func cpf_hex(_ text: String, alpha: CGFloat? = nil) -> UIColor {
+        if let colorAlpha = alpha {
+            return UIColor(text).withAlphaComponent(colorAlpha)
+        }
+        return UIColor(text)
     }
     
-    /// 指定rgb数值生成UIColor对象
-    /// r、g、b取值0~1
+    /// 以rgb各项值生成UIColor对象
+    ///
+    /// - Parameters:
+    ///   - red: red值，0~1
+    ///   - green: green值，0~1
+    ///   - blue: blue值，0~1
+    /// - Returns: UIColor对象
     public class func cpf_rgb(_ red: CGFloat, _ green: CGFloat, _ blue: CGFloat) -> UIColor {
         return cpf_rgba(red, green, blue, 1.0)
     }
     
-    /// 指定rgba数值生成UIColor对象
-    /// r、g、b、a取值0~1
+    /// 以rgba各项值生成UIColor对象
+    ///
+    /// - Parameters:
+    ///   - red: red值，0~1
+    ///   - green: green值，0~1
+    ///   - blue: blue值，0~1
+    ///   - alpha: alpha值, 0~1
+    /// - Returns: UIColor对象
     public class func cpf_rgba(_ red: CGFloat, _ green: CGFloat, _ blue: CGFloat, _ alpha: CGFloat) -> UIColor {
         return UIColor(red: red, green: green, blue: blue, alpha: alpha)
     }
     
-    /// 附加alpha值到当前color
-    public func cpf(alpha: CGFloat) -> UIColor {
-        return self.withAlphaComponent(alpha)
+    /// 指定alpha值，以当前color为基础生成新的color对象
+    ///
+    /// - Parameter value: alpha值，0~1
+    /// - Returns: UIColor对象
+    public func cpf_alpha(_ value: CGFloat) -> UIColor {
+        return self.withAlphaComponent(value)
     }
     
-    /// 返回十六进制字符串
-    public var cpf_hexString: String {
-        return cpf_hexString(showAll: false)
-    }
-    
+    /// 获取颜色值对应的十六进制字符串
+    ///
+    /// - Parameter showAll: 是否在alpha为1时，仍显示alpha部分字串
+    /// - Returns: 十六进制字串
     public func cpf_hexString(showAll: Bool = true) -> String {
         var red: CGFloat = 0
         var green: CGFloat = 0
@@ -80,7 +103,7 @@ extension UIColor {
     
         red *= 255.0
         green *= 255.0
-        red *= 255.0
+        blue *= 255.0
         alpha *= 255.0
         
         var finalValue: Int = Int(blue + 0.5)

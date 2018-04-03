@@ -11,7 +11,7 @@ import CPFChain
 
 extension Cpf where Base: UIScrollView {
     @discardableResult
-    func disableAutoAdjustInset(_ toDisable: Bool) -> Cpf {
+    public func disableAutoAdjustInset(_ toDisable: Bool) -> Cpf {
         base.cpf_disableInsetAdjust()
         return self
     }
@@ -19,7 +19,7 @@ extension Cpf where Base: UIScrollView {
 
 extension Cpf where Base: UITableView {
     @discardableResult
-    func disableEstimaiton(_ toDisable: Bool) -> Cpf {
+    public func disableEstimaiton(_ toDisable: Bool) -> Cpf {
         base.cpf_disableEstimation()
         return self
     }

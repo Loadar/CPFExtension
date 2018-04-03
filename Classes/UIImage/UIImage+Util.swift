@@ -102,7 +102,7 @@ extension UIImage {
     ///   - colors: 颜色列表
     ///   - locations: 位置列表，数目与颜色列表一致
     /// - Returns: 结果图像
-    public class func cpf_radialGradient(with size: CGSize, colors: [(UIColor, Double)]) -> UIImage? {
+    public class func cpf_radialGradient(size: CGSize, colors: [(UIColor, Double)]) -> UIImage? {
         let scale = UIScreen.main.scale
         let finalSize = CGSize(width: size.width * scale, height: size.height * scale)
         

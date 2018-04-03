@@ -25,7 +25,7 @@ extension CGRect {
     ///
     /// - Parameter insets: 指定的insets
     /// - Returns: 结果rect
-    func cpf_inset(by insets: UIEdgeInsets) -> CGRect {
+    public func cpf_inset(by insets: UIEdgeInsets) -> CGRect {
         var newRect = self
         newRect.origin.x += insets.left
         newRect.origin.y += insets.top
@@ -38,7 +38,7 @@ extension CGRect {
     ///
     /// - Parameter scale: 指定的缩放参数
     /// - Returns: 结果rect
-    func cpf(scale: CGFloat) -> CGRect {
+    public func cpf(scale: CGFloat) -> CGRect {
         var newRect = self
         newRect.origin.x *= scale
         newRect.origin.y *= scale

@@ -11,6 +11,14 @@
 		933DFE3E20722E4C00D24830 /* UIScrollView+Adjust.swift in Sources */ = {isa = PBXBuildFile; fileRef = 933DFE3D20722E4C00D24830 /* UIScrollView+Adjust.swift */; };
 		933DFE4020722EFD00D24830 /* UIScrollView+Cpf.swift in Sources */ = {isa = PBXBuildFile; fileRef = 933DFE3F20722EFD00D24830 /* UIScrollView+Cpf.swift */; };
 		933DFE44207230A100D24830 /* CPFExtension.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 933DFE43207230A100D24830 /* CPFExtension.podspec */; };
+		933DFE4720731F1700D24830 /* UIColor+Cpf.swift in Sources */ = {isa = PBXBuildFile; fileRef = 933DFE4620731F1700D24830 /* UIColor+Cpf.swift */; };
+		933DFE492073216D00D24830 /* ColorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 933DFE482073216D00D24830 /* ColorTests.swift */; };
+		933DFE4E20732A3C00D24830 /* UIFont+PingFang.swift in Sources */ = {isa = PBXBuildFile; fileRef = 933DFE4D20732A3C00D24830 /* UIFont+PingFang.swift */; };
+		933DFE5020732C3500D24830 /* FontTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 933DFE4F20732C3500D24830 /* FontTests.swift */; };
+		933DFE532073318D00D24830 /* UIImage+Cpf.swift in Sources */ = {isa = PBXBuildFile; fileRef = 933DFE522073318D00D24830 /* UIImage+Cpf.swift */; };
+		933DFE5820734EC800D24830 /* UITextView+Cpf.swift in Sources */ = {isa = PBXBuildFile; fileRef = 933DFE5720734EC800D24830 /* UITextView+Cpf.swift */; };
+		933DFE5A20734F5D00D24830 /* UITextField+Cpf.swift in Sources */ = {isa = PBXBuildFile; fileRef = 933DFE5920734F5D00D24830 /* UITextField+Cpf.swift */; };
+		933DFE5D207350D600D24830 /* UIView+Cpf.swift in Sources */ = {isa = PBXBuildFile; fileRef = 933DFE5C207350D600D24830 /* UIView+Cpf.swift */; };
 		934C3DF3206A3C33002F9423 /* UIFont+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 934C3DF2206A3C33002F9423 /* UIFont+Convenience.swift */; };
 		93634595205A724A00C22B0A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93634594205A724A00C22B0A /* AppDelegate.swift */; };
 		93634597205A724A00C22B0A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93634596205A724A00C22B0A /* ViewController.swift */; };
@@ -68,6 +76,14 @@
 		933DFE3D20722E4C00D24830 /* UIScrollView+Adjust.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScrollView+Adjust.swift"; sourceTree = "<group>"; };
 		933DFE3F20722EFD00D24830 /* UIScrollView+Cpf.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScrollView+Cpf.swift"; sourceTree = "<group>"; };
 		933DFE43207230A100D24830 /* CPFExtension.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; fileEncoding = 4; path = CPFExtension.podspec; sourceTree = "<group>"; };
+		933DFE4620731F1700D24830 /* UIColor+Cpf.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Cpf.swift"; sourceTree = "<group>"; };
+		933DFE482073216D00D24830 /* ColorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorTests.swift; sourceTree = "<group>"; };
+		933DFE4D20732A3C00D24830 /* UIFont+PingFang.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+PingFang.swift"; sourceTree = "<group>"; };
+		933DFE4F20732C3500D24830 /* FontTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontTests.swift; sourceTree = "<group>"; };
+		933DFE522073318D00D24830 /* UIImage+Cpf.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Cpf.swift"; sourceTree = "<group>"; };
+		933DFE5720734EC800D24830 /* UITextView+Cpf.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextView+Cpf.swift"; sourceTree = "<group>"; };
+		933DFE5920734F5D00D24830 /* UITextField+Cpf.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Cpf.swift"; sourceTree = "<group>"; };
+		933DFE5C207350D600D24830 /* UIView+Cpf.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Cpf.swift"; sourceTree = "<group>"; };
 		934C3DF2206A3C33002F9423 /* UIFont+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Convenience.swift"; sourceTree = "<group>"; };
 		93634591205A724A00C22B0A /* CPFExtensions.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CPFExtensions.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		93634594205A724A00C22B0A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -150,6 +166,103 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		933DFE4520731EF300D24830 /* UIColor */ = {
+			isa = PBXGroup;
+			children = (
+				936345C4205A730C00C22B0A /* UIColor+Convenience.swift */,
+				933DFE4620731F1700D24830 /* UIColor+Cpf.swift */,
+			);
+			path = UIColor;
+			sourceTree = "<group>";
+		};
+		933DFE4A207329E900D24830 /* UIFont */ = {
+			isa = PBXGroup;
+			children = (
+				934C3DF2206A3C33002F9423 /* UIFont+Convenience.swift */,
+				933DFE4D20732A3C00D24830 /* UIFont+PingFang.swift */,
+			);
+			path = UIFont;
+			sourceTree = "<group>";
+		};
+		933DFE512073316C00D24830 /* UIImage */ = {
+			isa = PBXGroup;
+			children = (
+				936345C8205A7FD000C22B0A /* UIImage+Util.swift */,
+				933DFE522073318D00D24830 /* UIImage+Cpf.swift */,
+			);
+			path = UIImage;
+			sourceTree = "<group>";
+		};
+		933DFE542073370A00D24830 /* CGGeometry */ = {
+			isa = PBXGroup;
+			children = (
+				937041DC206BA10600CB02CF /* CGPoint+Convenience.swift */,
+				937041D0206B984B00CB02CF /* CGSize+Convenience.swift */,
+				937041DE206BA19D00CB02CF /* CGRect+Convenience.swift */,
+			);
+			path = CGGeometry;
+			sourceTree = "<group>";
+		};
+		933DFE5520734E9500D24830 /* UITextField */ = {
+			isa = PBXGroup;
+			children = (
+				937041E2206BA43800CB02CF /* UITextField+Util.swift */,
+				933DFE5920734F5D00D24830 /* UITextField+Cpf.swift */,
+			);
+			path = UITextField;
+			sourceTree = "<group>";
+		};
+		933DFE5620734EA000D24830 /* UITextView */ = {
+			isa = PBXGroup;
+			children = (
+				937041E42071C88B00CB02CF /* UITextView+Util.swift */,
+				933DFE5720734EC800D24830 /* UITextView+Cpf.swift */,
+			);
+			path = UITextView;
+			sourceTree = "<group>";
+		};
+		933DFE5B20734F7500D24830 /* UIEdgeInsets */ = {
+			isa = PBXGroup;
+			children = (
+				937041E0206BA30800CB02CF /* UIEdgeInsets+Convenience.swift */,
+			);
+			path = UIEdgeInsets;
+			sourceTree = "<group>";
+		};
+		933DFE5E207350E000D24830 /* UIScrollView */ = {
+			isa = PBXGroup;
+			children = (
+				933DFE3D20722E4C00D24830 /* UIScrollView+Adjust.swift */,
+				933DFE3F20722EFD00D24830 /* UIScrollView+Cpf.swift */,
+			);
+			path = UIScrollView;
+			sourceTree = "<group>";
+		};
+		933DFE5F207351F200D24830 /* String */ = {
+			isa = PBXGroup;
+			children = (
+				937041D4206B9E0D00CB02CF /* String+Size.swift */,
+				937041D6206B9F1B00CB02CF /* String+Date.swift */,
+			);
+			path = String;
+			sourceTree = "<group>";
+		};
+		933DFE60207351FE00D24830 /* Array */ = {
+			isa = PBXGroup;
+			children = (
+				937041C1206B907C00CB02CF /* Array+Util.swift */,
+			);
+			path = Array;
+			sourceTree = "<group>";
+		};
+		933DFE612073520C00D24830 /* Date */ = {
+			isa = PBXGroup;
+			children = (
+				937041DA206BA07D00CB02CF /* Date+String.swift */,
+			);
+			path = Date;
+			sourceTree = "<group>";
+		};
 		93634588205A724A00C22B0A = {
 			isa = PBXGroup;
 			children = (
@@ -191,6 +304,8 @@
 			isa = PBXGroup;
 			children = (
 				936345A9205A724A00C22B0A /* CPFExtensionsTests.swift */,
+				933DFE482073216D00D24830 /* ColorTests.swift */,
+				933DFE4F20732C3500D24830 /* FontTests.swift */,
 				936345AB205A724A00C22B0A /* Info.plist */,
 			);
 			path = CPFExtensionsTests;
@@ -208,23 +323,21 @@
 		936345C2205A72C400C22B0A /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				936345C4205A730C00C22B0A /* UIColor+Convenience.swift */,
-				934C3DF2206A3C33002F9423 /* UIFont+Convenience.swift */,
-				936345C8205A7FD000C22B0A /* UIImage+Util.swift */,
-				937041DC206BA10600CB02CF /* CGPoint+Convenience.swift */,
-				937041D0206B984B00CB02CF /* CGSize+Convenience.swift */,
-				937041DE206BA19D00CB02CF /* CGRect+Convenience.swift */,
-				937041E0206BA30800CB02CF /* UIEdgeInsets+Convenience.swift */,
-				937041E2206BA43800CB02CF /* UITextField+Util.swift */,
-				937041E42071C88B00CB02CF /* UITextView+Util.swift */,
+				933DFE542073370A00D24830 /* CGGeometry */,
+				933DFE5B20734F7500D24830 /* UIEdgeInsets */,
+				933DFE4520731EF300D24830 /* UIColor */,
+				933DFE4A207329E900D24830 /* UIFont */,
+				933DFE512073316C00D24830 /* UIImage */,
+				933DFE5520734E9500D24830 /* UITextField */,
+				933DFE5620734EA000D24830 /* UITextView */,
 				937041CD206B96CA00CB02CF /* UIAlertController */,
 				937041CC206B962E00CB02CF /* UIView */,
+				933DFE5E207350E000D24830 /* UIScrollView */,
 				937041C9206B957C00CB02CF /* UIButton */,
+				933DFE60207351FE00D24830 /* Array */,
+				933DFE5F207351F200D24830 /* String */,
+				933DFE612073520C00D24830 /* Date */,
 				937041BF206B900600CB02CF /* NSObject+Throttle.swift */,
-				937041C1206B907C00CB02CF /* Array+Util.swift */,
-				937041D4206B9E0D00CB02CF /* String+Size.swift */,
-				937041D6206B9F1B00CB02CF /* String+Date.swift */,
-				937041DA206BA07D00CB02CF /* Date+String.swift */,
 				937041D8206B9FA400CB02CF /* Util.swift */,
 			);
 			name = Classes;
@@ -257,8 +370,7 @@
 				937041BD206B8EB800CB02CF /* UIView+SnapShot.swift */,
 				937041C7206B92D100CB02CF /* UIView+Progress.swift */,
 				933DFE3B20722AE000D24830 /* UIView+Badge.swift */,
-				933DFE3D20722E4C00D24830 /* UIScrollView+Adjust.swift */,
-				933DFE3F20722EFD00D24830 /* UIScrollView+Cpf.swift */,
+				933DFE5C207350D600D24830 /* UIView+Cpf.swift */,
 			);
 			path = UIView;
 			sourceTree = "<group>";
@@ -450,6 +562,8 @@
 			files = (
 				937041D1206B984B00CB02CF /* CGSize+Convenience.swift in Sources */,
 				937041C4206B91EF00CB02CF /* UIView+Line.swift in Sources */,
+				933DFE5D207350D600D24830 /* UIView+Cpf.swift in Sources */,
+				933DFE4E20732A3C00D24830 /* UIFont+PingFang.swift in Sources */,
 				933DFE3E20722E4C00D24830 /* UIScrollView+Adjust.swift in Sources */,
 				937041D5206B9E0D00CB02CF /* String+Size.swift in Sources */,
 				937041CB206B959400CB02CF /* UIButton+Cpf.swift in Sources */,
@@ -462,13 +576,16 @@
 				937041E3206BA43800CB02CF /* UITextField+Util.swift in Sources */,
 				937041C2206B907C00CB02CF /* Array+Util.swift in Sources */,
 				936345C9205A7FD000C22B0A /* UIImage+Util.swift in Sources */,
+				933DFE5A20734F5D00D24830 /* UITextField+Cpf.swift in Sources */,
 				937041BC206B860400CB02CF /* UIAlertController+Util.swift in Sources */,
 				937041C8206B92D100CB02CF /* UIView+Progress.swift in Sources */,
+				933DFE5820734EC800D24830 /* UITextView+Cpf.swift in Sources */,
 				937041D9206B9FA400CB02CF /* Util.swift in Sources */,
 				93634595205A724A00C22B0A /* AppDelegate.swift in Sources */,
 				937041DF206BA19D00CB02CF /* CGRect+Convenience.swift in Sources */,
 				933DFE3C20722AE000D24830 /* UIView+Badge.swift in Sources */,
 				936345C5205A730C00C22B0A /* UIColor+Convenience.swift in Sources */,
+				933DFE4720731F1700D24830 /* UIColor+Cpf.swift in Sources */,
 				937041DD206BA10600CB02CF /* CGPoint+Convenience.swift in Sources */,
 				934C3DF3206A3C33002F9423 /* UIFont+Convenience.swift in Sources */,
 				937041E1206BA30800CB02CF /* UIEdgeInsets+Convenience.swift in Sources */,
@@ -476,6 +593,7 @@
 				933DFE4020722EFD00D24830 /* UIScrollView+Cpf.swift in Sources */,
 				937041D7206B9F1B00CB02CF /* String+Date.swift in Sources */,
 				936345C7205A7E1800C22B0A /* UIButton+ResponseArea.swift in Sources */,
+				933DFE532073318D00D24830 /* UIImage+Cpf.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -484,6 +602,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				936345AA205A724A00C22B0A /* CPFExtensionsTests.swift in Sources */,
+				933DFE5020732C3500D24830 /* FontTests.swift in Sources */,
+				933DFE492073216D00D24830 /* ColorTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -677,6 +797,10 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/CPFChain\"",
+				);
 				INFOPLIST_FILE = CPFExtensionsTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ruhnn.holding.CPFExtensionsTests;
@@ -693,6 +817,10 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/CPFChain\"",
+				);
 				INFOPLIST_FILE = CPFExtensionsTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ruhnn.holding.CPFExtensionsTests;

@@ -16,12 +16,12 @@ extension NSObject {
     ///   - time: 时间段，单位秒
     ///   - handler: 要执行的闭包
     public func cpf_performOnce(during time: TimeInterval = 0.5, _ handler: () -> Void) {
-        if let date = performTime {
+        if let date = cpf_performTime {
             if Date().timeIntervalSince(date) < time {
                 return
             }
         }
-        self.performTime = Date()
+        self.cpf_performTime = Date()
         handler()
     }
     
@@ -29,7 +29,7 @@ extension NSObject {
         static var performTime = 0
     }
     
-    private var performTime: Date? {
+    private var cpf_performTime: Date? {
         get { return objc_getAssociatedObject(self, &CPFThrottleConfigure.performTime) as? Date }
         set { objc_setAssociatedObject(self, &CPFThrottleConfigure.performTime, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC) }
     }

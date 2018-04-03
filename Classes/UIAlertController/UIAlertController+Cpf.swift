@@ -11,6 +11,10 @@ import CPFChain
 
 // MARK: -Util
 extension Cpf where Base: UIAlertController {
+    public static func alert(_ style: UIAlertControllerStyle = .alert) -> Cpf<UIAlertController> {
+        return UIAlertController.cpf_alert(with: style).cpf
+    }
+    
     @discardableResult
     public func title(_ text: String?) -> Cpf {
         base.title = text
