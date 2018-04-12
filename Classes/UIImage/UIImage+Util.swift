@@ -50,23 +50,21 @@ extension UIImage {
     }
     
     public class func cpf_image(with color: UIColor, size: CGSize, border: (CGFloat, UIColor)? = nil, corner radius: CGFloat? = nil) -> UIImage? {
+        let layer = CALayer()
+        layer.backgroundColor = color.cgColor
+        let rect = CGRect(origin: .zero, size: size)
+        layer.bounds = rect
+        if let cornerRadius = radius {
+            layer.cornerRadius = cornerRadius
+        }
+        if let (width, borderColor) = border {
+            layer.borderColor = borderColor.cgColor
+            layer.borderWidth = width
+        }
+
         return cpf_render(size: size) {
-            let path = UIBezierPath()
-            if let cornerRadius = radius {
-                path.append(UIBezierPath(roundedRect: CGRect(origin: .zero, size: size), cornerRadius: cornerRadius))
-            } else {
-                path.append(UIBezierPath(rect: CGRect(origin: .zero, size: size)))
-            }
-            color.setFill()
-            if let (width, borderColor) = border {
-                path.lineWidth = width
-                borderColor.setStroke()
-                path.fill()
-                path.stroke()
-            } else {
-                path.fill()
-            }
-            
+            guard let context = UIGraphicsGetCurrentContext() else { return }
+            layer.render(in: context)
         }
     }
     

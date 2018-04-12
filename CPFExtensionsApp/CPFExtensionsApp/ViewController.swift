@@ -9,6 +9,9 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    let testView = UIView()
+    let testImageView = UIImageView()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,7 +25,23 @@ class ViewController: UIViewController {
 
         }
         
-        //let image = UIImage.cpf_image(with: .red, size: CGSize(width: 80, height: 80), border: (1 / UIScreen.main.scale, .green), corner: 10)
+        let image = UIImage.cpf_image(with: .white, size: CGSize(width: 120, height: 32), border: (1, .red ), corner: 16)
+        
+        //print("***")
+        
+        view.addSubview(testView)
+        view.addSubview(testImageView)
+        
+        testView.frame = CGRect(x: 100, y: 100, width: 120, height: 32)
+        testImageView.frame = CGRect(x: 100, y: 200, width: 120, height: 32)
+        
+        testView.layer.borderWidth = 1
+        testView.layer.borderColor = UIColor.red.cgColor
+        testView.backgroundColor = .white
+        testView.layer.cornerRadius = 16
+        testView.clipsToBounds = true
+        
+        testImageView.image = image
     }
 
     override func didReceiveMemoryWarning() {
