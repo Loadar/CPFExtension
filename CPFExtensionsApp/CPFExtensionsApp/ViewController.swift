@@ -21,6 +21,8 @@ class ViewController: UIViewController {
             print(aText, UIFont.cpf_helveticaNeue(aWeight, size: 12.0))
 
         }
+        
+        //let image = UIImage.cpf_image(with: .red, size: CGSize(width: 80, height: 80), border: (1 / UIScreen.main.scale, .green), corner: 10)
     }
 
     override func didReceiveMemoryWarning() {

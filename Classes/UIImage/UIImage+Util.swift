@@ -49,6 +49,27 @@ extension UIImage {
         }
     }
     
+    public class func cpf_image(with color: UIColor, size: CGSize, border: (CGFloat, UIColor)? = nil, corner radius: CGFloat? = nil) -> UIImage? {
+        return cpf_render(size: size) {
+            let path = UIBezierPath()
+            if let cornerRadius = radius {
+                path.append(UIBezierPath(roundedRect: CGRect(origin: .zero, size: size), cornerRadius: cornerRadius))
+            } else {
+                path.append(UIBezierPath(rect: CGRect(origin: .zero, size: size)))
+            }
+            color.setFill()
+            if let (width, borderColor) = border {
+                path.lineWidth = width
+                borderColor.setStroke()
+                path.fill()
+                path.stroke()
+            } else {
+                path.fill()
+            }
+            
+        }
+    }
+    
     /// 转换图像到指定颜色
     ///
     /// - Parameter color: 指定颜色
