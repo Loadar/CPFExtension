@@ -20,6 +20,7 @@ extension UIView {
             self.addSubview(theProgressView)
             theProgressView.frame = CGRect(x: offset, y: bounds.midY - 5, width: 10, height: 10)
             progressView = theProgressView
+            self.cpf_progressView = theProgressView
         }
         
         if !progressView!.isAnimating {
