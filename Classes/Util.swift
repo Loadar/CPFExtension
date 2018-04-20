@@ -71,7 +71,7 @@ public class Util {
 }
 
 extension Util {
-    class var topController: UIViewController? {
+    public class var topController: UIViewController? {
         var controller = UIApplication.shared.keyWindow?.rootViewController
         while let aController = controller?.presentedViewController {
             controller = aController
