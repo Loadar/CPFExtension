@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		931B4DC6208980130069DB1A /* PingFang+Cpf.swift in Sources */ = {isa = PBXBuildFile; fileRef = 931B4DC5208980130069DB1A /* PingFang+Cpf.swift */; };
 		933DFE3C20722AE000D24830 /* UIView+Badge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 933DFE3B20722AE000D24830 /* UIView+Badge.swift */; };
 		933DFE3E20722E4C00D24830 /* UIScrollView+Adjust.swift in Sources */ = {isa = PBXBuildFile; fileRef = 933DFE3D20722E4C00D24830 /* UIScrollView+Adjust.swift */; };
 		933DFE4020722EFD00D24830 /* UIScrollView+Cpf.swift in Sources */ = {isa = PBXBuildFile; fileRef = 933DFE3F20722EFD00D24830 /* UIScrollView+Cpf.swift */; };
@@ -72,6 +73,7 @@
 /* Begin PBXFileReference section */
 		39F0110B04C7DA12498829E5 /* Pods-CPFExtensions.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CPFExtensions.release.xcconfig"; path = "Pods/Target Support Files/Pods-CPFExtensions/Pods-CPFExtensions.release.xcconfig"; sourceTree = "<group>"; };
 		5D9DDD7083B91D2E3B20E0BF /* Pods_CPFExtensions.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CPFExtensions.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		931B4DC5208980130069DB1A /* PingFang+Cpf.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PingFang+Cpf.swift"; sourceTree = "<group>"; };
 		933DFE3B20722AE000D24830 /* UIView+Badge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Badge.swift"; sourceTree = "<group>"; };
 		933DFE3D20722E4C00D24830 /* UIScrollView+Adjust.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScrollView+Adjust.swift"; sourceTree = "<group>"; };
 		933DFE3F20722EFD00D24830 /* UIScrollView+Cpf.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScrollView+Cpf.swift"; sourceTree = "<group>"; };
@@ -180,6 +182,7 @@
 			children = (
 				934C3DF2206A3C33002F9423 /* UIFont+Convenience.swift */,
 				933DFE4D20732A3C00D24830 /* UIFont+PingFang.swift */,
+				931B4DC5208980130069DB1A /* PingFang+Cpf.swift */,
 			);
 			path = UIFont;
 			sourceTree = "<group>";
@@ -564,6 +567,7 @@
 				937041C4206B91EF00CB02CF /* UIView+Line.swift in Sources */,
 				933DFE5D207350D600D24830 /* UIView+Cpf.swift in Sources */,
 				933DFE4E20732A3C00D24830 /* UIFont+PingFang.swift in Sources */,
+				931B4DC6208980130069DB1A /* PingFang+Cpf.swift in Sources */,
 				933DFE3E20722E4C00D24830 /* UIScrollView+Adjust.swift in Sources */,
 				937041D5206B9E0D00CB02CF /* String+Size.swift in Sources */,
 				937041CB206B959400CB02CF /* UIButton+Cpf.swift in Sources */,

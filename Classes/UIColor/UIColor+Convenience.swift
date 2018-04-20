@@ -12,7 +12,7 @@ extension UIColor {
     /// 十六进制颜色字符串生成UIColor对象
     ///
     /// - Parameter string: 十六进制字符串，长度为6或8(包含alpha)
-    public convenience init(_ string: String) {
+    public convenience init(hex string: String) {
         let length = string.lengthOfBytes(using: .utf8)
         guard (length == 6 || length == 8) else {
             // 字符串长度错误，返回clear color
@@ -52,9 +52,9 @@ extension UIColor {
     /// - Returns: UIColor对象
     public class func cpf_hex(_ text: String, alpha: CGFloat? = nil) -> UIColor {
         if let colorAlpha = alpha {
-            return UIColor(text).withAlphaComponent(colorAlpha)
+            return UIColor(hex: text).withAlphaComponent(colorAlpha)
         }
-        return UIColor(text)
+        return UIColor(hex: text)
     }
     
     /// 以rgb各项值生成UIColor对象

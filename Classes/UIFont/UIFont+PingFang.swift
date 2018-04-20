@@ -31,7 +31,7 @@ extension CPFFontName {
 }
 
 extension UIFont {
-    public class func cpf_pingFang(_ weight: CPFFontName.Weight = .regular, size: CGFloat) -> UIFont {
+    public class func cpf_pingFang(_ size: CGFloat, weight: CPFFontName.Weight = .regular) -> UIFont {
         return UIFont.cpf_font(.pingFang(weight), size: size)
     }
 }
