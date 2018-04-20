@@ -79,3 +79,13 @@ extension Util {
         return controller
     }
 }
+
+extension Util {
+    public class var isSimulator: Bool {
+        var isSimulator = false
+        #if arch(i386) || arch(x86_64)
+        isSimulator = true
+        #endif
+        return isSimulator
+    }
+}
