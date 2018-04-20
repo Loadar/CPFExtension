@@ -95,12 +95,22 @@ extension UIImage {
     ///   - start: 起始位置(坐标系归一化，如(0, 0.5)代表左边界中点)
     ///   - end: 结束位置
     /// - Returns: 结果图像
-    public class func cpf_gradient(size: CGSize, colors: [(UIColor, Double)], start: CGPoint? = nil, end: CGPoint? = nil) -> UIImage? {
+    public class func cpf_gradient(size: CGSize, colors: [UIColor], locations: [Double]? = nil, start: CGPoint? = nil, end: CGPoint? = nil) -> UIImage? {
         let scale = UIScreen.main.scale
         let finalSize = CGSize(width: size.width * scale, height: size.height * scale)
         let layer = CAGradientLayer()
-        layer.colors = colors.map { $0.0.cgColor }
-        layer.locations = colors.map { NSNumber(value: $0.1) }
+        layer.colors = colors.map { $0.cgColor }
+        var theLocations = [Double]()
+        let count = colors.count
+        if locations == nil, count > 1 {
+            // 默认数值平均分配
+            for i in 0..<count {
+                theLocations.append(Double(i) / Double(count - 1))
+            }
+        } else {
+            theLocations = locations!
+        }
+        layer.locations = theLocations.map { NSNumber(value: $0) }
         
         // start, end point确定渐变方向
         if let point = start { layer.startPoint = point }
@@ -121,16 +131,27 @@ extension UIImage {
     ///   - colors: 颜色列表
     ///   - locations: 位置列表，数目与颜色列表一致
     /// - Returns: 结果图像
-    public class func cpf_radialGradient(size: CGSize, colors: [(UIColor, Double)]) -> UIImage? {
+    public class func cpf_radialGradient(size: CGSize, colors: [UIColor], locations: [Double]? = nil) -> UIImage? {
         let scale = UIScreen.main.scale
         let finalSize = CGSize(width: size.width * scale, height: size.height * scale)
         
         // 圆心
         let center = CGPoint(x: finalSize.width / 2, y: finalSize.height / 2)
         
+        var theLocations = [Double]()
+        let count = colors.count
+        if locations == nil, count > 1 {
+            // 默认数值平均分配
+            for i in 0..<count {
+                theLocations.append(Double(i) / Double(count - 1))
+            }
+        } else {
+            theLocations = locations!
+        }
+        
         let space = CGColorSpaceCreateDeviceRGB()
         var components = [CGFloat]()
-        for (aColor, _) in colors {
+        for aColor in colors {
             var red: CGFloat = 0
             var green: CGFloat = 0
             var blue: CGFloat = 0
@@ -143,7 +164,7 @@ extension UIImage {
         }
         let gradient = CGGradient(colorSpace: space,
                                   colorComponents: components,
-                                  locations: colors.map { CGFloat($0.1) },
+                                  locations: theLocations.map { CGFloat($0) },
                                   count: colors.count)
         if gradient == nil { return nil }
 
