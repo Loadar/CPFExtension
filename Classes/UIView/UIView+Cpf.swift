@@ -18,7 +18,7 @@ extension Cpf where Base: UIView {
     }
 
     // MARK: - View Line
-    public func addLine(width: CGFloat? = nil, color: UIColor, configure closure: (UIView) -> Void) {
+    public func addLine(color: UIColor, configure closure: (UIView) -> Void) {
         let line = UIView()
         line.backgroundColor = color
         line.isUserInteractionEnabled = false
