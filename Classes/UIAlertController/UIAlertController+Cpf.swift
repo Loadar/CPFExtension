@@ -34,7 +34,7 @@ extension Cpf where Base: UIAlertController {
     }
     
     @discardableResult
-    public func cancelled(_ title: String = "取消", handler: ((UIAlertAction) -> Void)?) -> Cpf {
+    public func cancelled(_ title: String = "取消", handler: ((UIAlertAction) -> Void)? = nil) -> Cpf {
         return self.action(title, style: .cancel, handler: handler)
     }
     
