@@ -38,6 +38,8 @@ public struct CPFFontName {
         case black = "Black"
     }
     let fontName: String
+    
+    public init(fontName: String) {
+        self.fontName = fontName
+    }
 }
-
-
