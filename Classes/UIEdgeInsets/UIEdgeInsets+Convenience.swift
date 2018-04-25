@@ -15,4 +15,7 @@ extension UIEdgeInsets {
     public static func cpf(_ value: CGFloat) -> UIEdgeInsets {
         return UIEdgeInsets(top: value, left: value, bottom: value, right: value)
     }
+    public static func cpf(horizontal: CGFloat = 0, vetical: CGFloat = 0) -> UIEdgeInsets {
+        return UIEdgeInsets(top: vetical, left: horizontal, bottom: vetical, right: horizontal)
+    }
 }
