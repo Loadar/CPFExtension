@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		931B4DC6208980130069DB1A /* PingFang+Cpf.swift in Sources */ = {isa = PBXBuildFile; fileRef = 931B4DC5208980130069DB1A /* PingFang+Cpf.swift */; };
 		933DFE3C20722AE000D24830 /* UIView+Badge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 933DFE3B20722AE000D24830 /* UIView+Badge.swift */; };
-		933DFE3E20722E4C00D24830 /* UIScrollView+Adjust.swift in Sources */ = {isa = PBXBuildFile; fileRef = 933DFE3D20722E4C00D24830 /* UIScrollView+Adjust.swift */; };
-		933DFE4020722EFD00D24830 /* UIScrollView+Cpf.swift in Sources */ = {isa = PBXBuildFile; fileRef = 933DFE3F20722EFD00D24830 /* UIScrollView+Cpf.swift */; };
 		933DFE44207230A100D24830 /* CPFExtension.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 933DFE43207230A100D24830 /* CPFExtension.podspec */; };
 		933DFE4720731F1700D24830 /* UIColor+Cpf.swift in Sources */ = {isa = PBXBuildFile; fileRef = 933DFE4620731F1700D24830 /* UIColor+Cpf.swift */; };
 		933DFE492073216D00D24830 /* ColorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 933DFE482073216D00D24830 /* ColorTests.swift */; };
@@ -75,8 +73,6 @@
 		5D9DDD7083B91D2E3B20E0BF /* Pods_CPFExtensions.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CPFExtensions.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		931B4DC5208980130069DB1A /* PingFang+Cpf.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PingFang+Cpf.swift"; sourceTree = "<group>"; };
 		933DFE3B20722AE000D24830 /* UIView+Badge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Badge.swift"; sourceTree = "<group>"; };
-		933DFE3D20722E4C00D24830 /* UIScrollView+Adjust.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScrollView+Adjust.swift"; sourceTree = "<group>"; };
-		933DFE3F20722EFD00D24830 /* UIScrollView+Cpf.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScrollView+Cpf.swift"; sourceTree = "<group>"; };
 		933DFE43207230A100D24830 /* CPFExtension.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; fileEncoding = 4; path = CPFExtension.podspec; sourceTree = "<group>"; };
 		933DFE4620731F1700D24830 /* UIColor+Cpf.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Cpf.swift"; sourceTree = "<group>"; };
 		933DFE482073216D00D24830 /* ColorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorTests.swift; sourceTree = "<group>"; };
@@ -232,15 +228,6 @@
 			path = UIEdgeInsets;
 			sourceTree = "<group>";
 		};
-		933DFE5E207350E000D24830 /* UIScrollView */ = {
-			isa = PBXGroup;
-			children = (
-				933DFE3D20722E4C00D24830 /* UIScrollView+Adjust.swift */,
-				933DFE3F20722EFD00D24830 /* UIScrollView+Cpf.swift */,
-			);
-			path = UIScrollView;
-			sourceTree = "<group>";
-		};
 		933DFE5F207351F200D24830 /* String */ = {
 			isa = PBXGroup;
 			children = (
@@ -335,7 +322,6 @@
 				933DFE5620734EA000D24830 /* UITextView */,
 				937041CD206B96CA00CB02CF /* UIAlertController */,
 				937041CC206B962E00CB02CF /* UIView */,
-				933DFE5E207350E000D24830 /* UIScrollView */,
 				937041C9206B957C00CB02CF /* UIButton */,
 				933DFE60207351FE00D24830 /* Array */,
 				933DFE5F207351F200D24830 /* String */,
@@ -568,7 +554,6 @@
 				933DFE5D207350D600D24830 /* UIView+Cpf.swift in Sources */,
 				933DFE4E20732A3C00D24830 /* UIFont+PingFang.swift in Sources */,
 				931B4DC6208980130069DB1A /* PingFang+Cpf.swift in Sources */,
-				933DFE3E20722E4C00D24830 /* UIScrollView+Adjust.swift in Sources */,
 				937041D5206B9E0D00CB02CF /* String+Size.swift in Sources */,
 				937041CB206B959400CB02CF /* UIButton+Cpf.swift in Sources */,
 				93634597205A724A00C22B0A /* ViewController.swift in Sources */,
@@ -594,7 +579,6 @@
 				934C3DF3206A3C33002F9423 /* UIFont+Convenience.swift in Sources */,
 				937041E1206BA30800CB02CF /* UIEdgeInsets+Convenience.swift in Sources */,
 				937041C6206B927100CB02CF /* UIButton+Util.swift in Sources */,
-				933DFE4020722EFD00D24830 /* UIScrollView+Cpf.swift in Sources */,
 				937041D7206B9F1B00CB02CF /* String+Date.swift in Sources */,
 				936345C7205A7E1800C22B0A /* UIButton+ResponseArea.swift in Sources */,
 				933DFE532073318D00D24830 /* UIImage+Cpf.swift in Sources */,
