@@ -28,7 +28,7 @@ extension Cpf where Base: UIAlertController {
     }
     
     @discardableResult
-    public func action(_ title: String, style: UIAlertActionStyle = .default, handler: ((UIAlertAction) -> Void)?) -> Cpf {
+    public func action(_ title: String, style: UIAlertActionStyle = .default, handler: ((UIAlertAction) -> Void)? = nil) -> Cpf {
         base.addAction(UIAlertAction(title: title, style: style, handler: handler))
         return self
     }
