@@ -221,3 +221,15 @@ extension UIImage {
     }
 }
 
+extension UIImage {
+    /// 旋转图片一定的弧度
+    public func rotate(_ radian: CGFloat) -> UIImage? {
+        return UIImage.cpf_render(size: self.size) {
+            let context = UIGraphicsGetCurrentContext()
+            context?.translateBy(x: self.size.width / 2, y: self.size.height / 2)
+            context?.rotate(by: radian)
+            context?.translateBy(x: -self.size.width / 2, y: -self.size.height / 2)
+            self.draw(in: CGRect(origin: .zero, size: self.size))
+        }
+    }
+}
