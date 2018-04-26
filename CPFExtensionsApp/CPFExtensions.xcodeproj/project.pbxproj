@@ -18,6 +18,8 @@
 		933DFE5820734EC800D24830 /* UITextView+Cpf.swift in Sources */ = {isa = PBXBuildFile; fileRef = 933DFE5720734EC800D24830 /* UITextView+Cpf.swift */; };
 		933DFE5A20734F5D00D24830 /* UITextField+Cpf.swift in Sources */ = {isa = PBXBuildFile; fileRef = 933DFE5920734F5D00D24830 /* UITextField+Cpf.swift */; };
 		933DFE5D207350D600D24830 /* UIView+Cpf.swift in Sources */ = {isa = PBXBuildFile; fileRef = 933DFE5C207350D600D24830 /* UIView+Cpf.swift */; };
+		93476E4B2091783C00AE61DC /* CPFGradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93476E4A2091783C00AE61DC /* CPFGradient.swift */; };
+		93476E4D20917B6600AE61DC /* CPFGradient+CPf.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93476E4C20917B6600AE61DC /* CPFGradient+CPf.swift */; };
 		934C3DF3206A3C33002F9423 /* UIFont+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 934C3DF2206A3C33002F9423 /* UIFont+Convenience.swift */; };
 		93634595205A724A00C22B0A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93634594205A724A00C22B0A /* AppDelegate.swift */; };
 		93634597205A724A00C22B0A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93634596205A724A00C22B0A /* ViewController.swift */; };
@@ -82,6 +84,8 @@
 		933DFE5720734EC800D24830 /* UITextView+Cpf.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextView+Cpf.swift"; sourceTree = "<group>"; };
 		933DFE5920734F5D00D24830 /* UITextField+Cpf.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Cpf.swift"; sourceTree = "<group>"; };
 		933DFE5C207350D600D24830 /* UIView+Cpf.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Cpf.swift"; sourceTree = "<group>"; };
+		93476E4A2091783C00AE61DC /* CPFGradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPFGradient.swift; sourceTree = "<group>"; };
+		93476E4C20917B6600AE61DC /* CPFGradient+CPf.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CPFGradient+CPf.swift"; sourceTree = "<group>"; };
 		934C3DF2206A3C33002F9423 /* UIFont+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Convenience.swift"; sourceTree = "<group>"; };
 		93634591205A724A00C22B0A /* CPFExtensions.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CPFExtensions.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		93634594205A724A00C22B0A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -188,6 +192,8 @@
 			children = (
 				936345C8205A7FD000C22B0A /* UIImage+Util.swift */,
 				933DFE522073318D00D24830 /* UIImage+Cpf.swift */,
+				93476E4A2091783C00AE61DC /* CPFGradient.swift */,
+				93476E4C20917B6600AE61DC /* CPFGradient+CPf.swift */,
 			);
 			path = UIImage;
 			sourceTree = "<group>";
@@ -560,10 +566,12 @@
 				937041C0206B900600CB02CF /* NSObject+Throttle.swift in Sources */,
 				937041CF206B96F500CB02CF /* UIAlertController+Cpf.swift in Sources */,
 				937041BE206B8EB800CB02CF /* UIView+SnapShot.swift in Sources */,
+				93476E4B2091783C00AE61DC /* CPFGradient.swift in Sources */,
 				937041E52071C88B00CB02CF /* UITextView+Util.swift in Sources */,
 				937041DB206BA07D00CB02CF /* Date+String.swift in Sources */,
 				937041E3206BA43800CB02CF /* UITextField+Util.swift in Sources */,
 				937041C2206B907C00CB02CF /* Array+Util.swift in Sources */,
+				93476E4D20917B6600AE61DC /* CPFGradient+CPf.swift in Sources */,
 				936345C9205A7FD000C22B0A /* UIImage+Util.swift in Sources */,
 				933DFE5A20734F5D00D24830 /* UITextField+Cpf.swift in Sources */,
 				937041BC206B860400CB02CF /* UIAlertController+Util.swift in Sources */,
