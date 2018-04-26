@@ -16,7 +16,7 @@ extension Date {
     }
     
     // 当前为哪一年
-    static var cpf_currentYear: String {
+    public static var cpf_currentYear: String {
         let date = Date()
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy"
