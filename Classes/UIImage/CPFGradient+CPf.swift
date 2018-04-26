@@ -9,6 +9,8 @@
 import UIKit
 import CPFChain
 
+extension CPFGradient: CpfCompatible {}
+
 extension Cpf where Base: CPFGradient {
     @discardableResult
     public func style(_ style: CPFGradient.Style) -> Cpf {
