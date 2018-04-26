@@ -18,6 +18,8 @@ public class CPFGradient {
     
     public var style: CPFGradient.Style = .liner
     
+    public init() {}
+    
     public var image: UIImage? {
         switch style {
         case .liner:
