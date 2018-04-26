@@ -56,3 +56,10 @@ extension CGSize {
         return max(scaleX, scaleY)
     }
 }
+
+extension CGSize {
+    public var cpf_ptSize: CGSize {
+        let scale = UIScreen.main.scale
+        return self.cpf_scale(with: 1 / scale)
+    }
+}
