@@ -22,7 +22,8 @@ extension UIView {
         
         let badgeView = UIView()
         self.addSubview(badgeView)
-       
+        self.cpf_badgeView = badgeView
+        
         // frame
         let viewRect = self.bounds
         let badgeRect = CGRect(x: viewRect.maxX - radius, y: 0, width: radius * 2, height: radius * 2)
