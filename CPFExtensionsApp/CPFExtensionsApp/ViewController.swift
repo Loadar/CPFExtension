@@ -13,7 +13,7 @@ class ViewController: UIViewController {
     let testView = UIView()
     let testImageView = UIImageView()
 
-    private var count = 1
+    private var count = 0
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -43,10 +43,6 @@ class ViewController: UIViewController {
         testView.clipsToBounds = true
         
         testImageView.image = image
-        
-        testView.cpf_addBadge(with: 1) { (label) in
-            
-        }
         
         Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(updateBaged(_:)), userInfo: nil, repeats: true)
     }

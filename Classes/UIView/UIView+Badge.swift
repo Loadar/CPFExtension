@@ -78,6 +78,13 @@ extension UIView {
     
     /// 更新badge数字
     public func cpf_updateBadge(with count: Int, maxCount: Int = 99) {
+        if cpf_badgeView == nil {
+            // 无badge时，直接add
+            self.cpf_addBadge(with: count, maxCount: maxCount) { (_) in
+                
+            }
+            return
+        }
         guard let label = cpf_badgeView as? UILabel else { return }
         
         var text = "\(count)"
