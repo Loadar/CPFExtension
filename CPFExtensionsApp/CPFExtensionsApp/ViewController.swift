@@ -13,6 +13,7 @@ class ViewController: UIViewController {
     let testView = UIView()
     let testImageView = UIImageView()
 
+    private var count = 1
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -43,7 +44,20 @@ class ViewController: UIViewController {
         
         testImageView.image = image
         
-        testView.cpf_addBadge()
+        testView.cpf_addBadge(with: 1) { (label) in
+            
+        }
+        
+        Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(updateBaged(_:)), userInfo: nil, repeats: true)
+    }
+    
+    @objc private func updateBaged(_ timer: Timer) {
+        count += 1
+        testView.cpf_updateBadge(with: count)
+        
+        if count > 110 {
+            timer.invalidate()
+        }
     }
 
     override func didReceiveMemoryWarning() {

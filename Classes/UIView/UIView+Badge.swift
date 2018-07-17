@@ -37,7 +37,8 @@ extension UIView {
         badgeView.layer.borderColor = borderColor.cgColor
     }
     
-    /// 给当前view添加数字badge，背景色默认red，文字颜色默认white，字体默认平方medium 10，文字边距默认2，最大数字默认99，偏移默认右上角(-7, -4)
+    /// 给当前view添加数字badge，背景色默认red，文字颜色默认white，字体默认平方medium 10，文字边距默认垂直2、水平4，最大数字默认99，偏移默认右上角(-7, -4)
+    /// badge宽最小为25
     public func cpf_addBadge(with count: Int, maxCount: Int = 99, configure handler: (UILabel) -> Void) {
         if cpf_badgeView != nil { return }
         
@@ -58,17 +59,35 @@ extension UIView {
         badgeView.textColor = .white
         badgeView.backgroundColor = .red
         badgeView.text = text
+        badgeView.clipsToBounds = true
         var size = text.cpf_size(font: badgeView.font)
-        size.width += 2 + 2
+        size.width += 4 + 4
         size.height += 2 + 2
         
         // frame
         let viewRect = self.bounds
-        let badgeRect = CGRect(x: viewRect.maxX - 7, y: viewRect.minY - 4, width: size.width, height: size.height)
+        let badgeRect = CGRect(x: viewRect.maxX - 7, y: viewRect.minY - 4, width: max(size.width, 25), height: size.height)
         badgeView.frame = badgeRect
+        
+        let radius = min(badgeRect.width, badgeRect.height) / 2
+        badgeView.layer.cornerRadius = radius
 
         // 非默认属性，调用方配置
         handler(badgeView)
+    }
+    
+    /// 更新badge数字
+    public func cpf_updateBadge(with count: Int, maxCount: Int = 99) {
+        guard let label = cpf_badgeView as? UILabel else { return }
+        
+        var text = "\(count)"
+        if count > maxCount {
+            text = "99+"
+        }
+        label.text = text
+        var size = text.cpf_size(font: label.font)
+        size.width += 4 + 4
+        label.frame.size.width = max(size.width, 25)
     }
     
     public func cpf_removeBadge() {
