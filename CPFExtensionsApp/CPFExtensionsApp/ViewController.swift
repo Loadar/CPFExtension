@@ -12,6 +12,7 @@ class ViewController: UIViewController {
     
     let testView = UIView()
     let testImageView = UIImageView()
+    let button = UIButton(type: .custom)
 
     private var count = 0
     override func viewDidLoad() {
@@ -44,12 +45,20 @@ class ViewController: UIViewController {
         
         testImageView.image = image
         
+        
+        view.addSubview(button)
+        button.imageView?.contentMode = .scaleAspectFit
+        button.setImage(UIImage(named: "message"), for: .normal)
+        button.frame = CGRect(x: 100, y: 300, width: 20, height: 20)
+        
         Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(updateBaged(_:)), userInfo: nil, repeats: true)
     }
     
     @objc private func updateBaged(_ timer: Timer) {
         count += 1
-        testView.cpf_updateBadge(with: count)
+        button.cpf_updateBadge(with: count) { (label) in
+            label.backgroundColor = .cpf_hex("ff5172")
+        }
         
         if count > 110 {
             timer.invalidate()
