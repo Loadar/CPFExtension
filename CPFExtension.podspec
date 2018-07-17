@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name = 'CPFExtension'
-  s.version = '0.2.5'
+  s.version = '0.2.6'
   s.summary = 'Swift一些实用扩展'
   s.license = { :type => 'MIT', :file => 'LICENSE' }
   s.author = { 'chenpengfei' => 'afeiafeia@163.com' }

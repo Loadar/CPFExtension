@@ -42,6 +42,8 @@ class ViewController: UIViewController {
         testView.clipsToBounds = true
         
         testImageView.image = image
+        
+        testView.cpf_addBadge()
     }
 
     override func didReceiveMemoryWarning() {
