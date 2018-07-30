@@ -99,6 +99,41 @@ extension UIView {
         handler?(label)
     }
     
+    /// 给当前view添加字符串badge，背景色默认red，文字颜色默认white，字体默认平方medium 10，文字水平边距默认3，偏移默认右上角(-7, -4)
+    public func cpf_addBadge(with text: String, configure handler: ((UILabel) -> Void)? = nil) {
+        if cpf_badgeView != nil { return }
+        
+        // 当前view clipsToBounds必须设置为false，因为badge会超出当前view的bounds
+        self.clipsToBounds = false
+        
+        let badgeView = UILabel()
+        self.addSubview(badgeView)
+        self.cpf_badgeView = badgeView
+        
+        // attributes
+        badgeView.font = UIFont.cpf_pingFang(10, weight: .medium)
+        badgeView.textAlignment = .center
+        badgeView.textColor = .white
+        badgeView.backgroundColor = .red
+        badgeView.text = text
+        badgeView.clipsToBounds = true
+        
+        var size = text.cpf_size(font: badgeView.font)
+        size.width += 2 + 2
+        size.height += 1
+        
+        // frame
+        let viewRect = self.bounds
+        let badgeRect = CGRect(x: viewRect.maxX - 7, y: viewRect.minY - 4, width: max(size.width, size.height), height: size.height)
+        badgeView.frame = badgeRect
+        
+        let radius = min(badgeRect.width, badgeRect.height) / 2
+        badgeView.layer.cornerRadius = radius
+        
+        // 非默认属性，调用方配置
+        handler?(badgeView)
+    }
+
     public func cpf_removeBadge() {
         cpf_badgeView?.removeFromSuperview()
         self.cpf_badgeView = nil

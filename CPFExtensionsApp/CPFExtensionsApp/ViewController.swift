@@ -13,6 +13,7 @@ class ViewController: UIViewController {
     let testView = UIView()
     let testImageView = UIImageView()
     let button = UIButton(type: .custom)
+    let button2 = UIButton(type: .custom)
 
     private var count = 0
     override func viewDidLoad() {
@@ -51,7 +52,32 @@ class ViewController: UIViewController {
         button.setImage(UIImage(named: "message"), for: .normal)
         button.frame = CGRect(x: 100, y: 300, width: 20, height: 20)
         
+        
+        view.addSubview(button2)
+        button2.setTitle("INS热图", for: .normal)
+        button2.setTitleColor(UIColor.darkGray, for: .normal)
+        button2.frame = CGRect(x: 100, y: 500, width: 120, height: 20)
+        if let size: CGSize = button2.currentTitle?.cpf_size(font: button2.titleLabel?.font) {
+            button2.frame.size.width = size.width
+        }
+        button2.cpf_addBadge(with: "hot") { (label) in
+            var frame = label.frame
+            frame.size.width += 1 + 1 // 默认2边距，改成3边距
+            //label.clipsToBounds = true
+            label.frame = frame
+            label.layer.cornerRadius = 0
+            
+            let maskLayer = CAShapeLayer()
+            let path = UIBezierPath(roundedRect: CGRect(origin: .zero, size: frame.size),
+                                    byRoundingCorners: [.topLeft, .bottomRight],
+                                    cornerRadii: CGSize(width: 6, height: 6))
+            maskLayer.path = path.cgPath
+            label.layer.mask = maskLayer
+        }
+        
         Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(updateBaged(_:)), userInfo: nil, repeats: true)
+        
+        
     }
     
     @objc private func updateBaged(_ timer: Timer) {
