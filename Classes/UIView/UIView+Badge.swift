@@ -25,7 +25,7 @@ extension UIView {
             self.addSubview(badgeView)
             
             // 当前view clipsToBounds必须设置为false，因为badge可能会超出当前view的bounds
-            self.clipsToBounds = true
+            self.clipsToBounds = false
             
             self.cpf_badgeView = badgeView
         }
@@ -64,7 +64,7 @@ extension UIView {
             label.clipsToBounds = true
 
             // 当前view clipsToBounds必须设置为false，因为badge可能会超出当前view的bounds
-            self.clipsToBounds = true
+            self.clipsToBounds = false
             
             self.cpf_badgeView = label
         }
@@ -113,7 +113,7 @@ extension UIView {
             label.clipsToBounds = true
             
             // 当前view clipsToBounds必须设置为false，因为badge可能会超出当前view的bounds
-            self.clipsToBounds = true
+            self.clipsToBounds = false
             
             self.cpf_badgeView = label
         }

@@ -60,7 +60,7 @@ class ViewController: UIViewController {
         if let size: CGSize = button2.currentTitle?.cpf_size(font: button2.titleLabel?.font) {
             button2.frame.size.width = size.width
         }
-        button2.cpf_addBadge(with: "hot") { (label) in
+        button2.cpf_addBadge(text: "hot") { (label) in
             var frame = label.frame
             frame.size.width += 1 + 1 // 默认2边距，改成3边距
             //label.clipsToBounds = true
@@ -82,7 +82,7 @@ class ViewController: UIViewController {
     
     @objc private func updateBaged(_ timer: Timer) {
         count += 1
-        button.cpf_updateBadge(with: count) { (label) in
+        button.cpf_addBadge(count: count) { (label) in
             label.backgroundColor = .cpf_hex("ff5172")
         }
         
