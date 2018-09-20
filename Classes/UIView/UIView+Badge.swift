@@ -13,125 +13,131 @@ extension UIView {
         static var badgeKey = 0
     }
     
-    /// 给当前view添加badge，圆点半径默认5pt，颜色默认red
-    public func cpf_addBadge(with radius: CGFloat = 5, color: UIColor = .red, borderColor: UIColor = .white) {
-        if cpf_badgeView != nil { return }
-        
-        // 当前view clipsToBounds必须设置为false，因为badge会超出当前view的bounds
-        self.clipsToBounds = false
-        
-        let badgeView = UIView()
-        self.addSubview(badgeView)
-        self.cpf_badgeView = badgeView
-        
-        // frame
-        let viewRect = self.bounds
-        let badgeRect = CGRect(x: viewRect.maxX - radius, y: 0, width: radius * 2, height: radius * 2)
-        badgeView.frame = badgeRect
-        
-        // attributes
-        badgeView.backgroundColor = .red
-        badgeView.layer.cornerRadius = radius
-        // 增加一个边框以与周围颜色区分
-        badgeView.layer.borderWidth = 1 / UIScreen.main.scale
-        badgeView.layer.borderColor = borderColor.cgColor
-    }
-    
-    /// 给当前view添加数字badge，背景色默认red，文字颜色默认white，字体默认平方medium 10，文字水平边距默认2，最大数字默认99，偏移默认右上角(-7, -4)
-    public func cpf_addBadge(with count: Int, maxCount: Int = 99, configure handler: (UILabel) -> Void) {
-        if cpf_badgeView != nil { return }
-        
-        // 当前view clipsToBounds必须设置为false，因为badge会超出当前view的bounds
-        self.clipsToBounds = false
-
-        let badgeView = UILabel()
-        self.addSubview(badgeView)
-        self.cpf_badgeView = badgeView
-
-        // attributes
-        var text = "\(count)"
-        if count > maxCount {
-            text = "99+"
-        }
-        badgeView.font = UIFont.cpf_pingFang(10, weight: .medium)
-        badgeView.textAlignment = .center
-        badgeView.textColor = .white
-        badgeView.backgroundColor = .red
-        badgeView.text = text
-        badgeView.clipsToBounds = true
-        var size = text.cpf_size(font: badgeView.font)
-        size.width += 2 + 2
-        size.height += 1
-        
-        // frame
-        let viewRect = self.bounds
-        let badgeRect = CGRect(x: viewRect.maxX - 7, y: viewRect.minY - 4, width: max(size.width, size.height), height: size.height)
-        badgeView.frame = badgeRect
-        
-        let radius = min(badgeRect.width, badgeRect.height) / 2
-        badgeView.layer.cornerRadius = radius
-
-        // 非默认属性，调用方配置
-        handler(badgeView)
-    }
-    
-    /// 更新badge数字
-    public func cpf_updateBadge(with count: Int, maxCount: Int = 99, configure handler: ((UILabel) -> Void)? = nil) {
+    /// 添加badge(小红点)到当前view，重复调用时更新已有badge
+    ///
+    /// - Parameters:
+    ///   - radius: badge半径，默认5pt
+    ///   - color: badge颜色，默认red
+    ///   - handler: 自定义配置闭包，自定义其他配置时使用
+    public func cpf_addBadge(radius: CGFloat = 5, color: UIColor = .red, configure handler: ((UIView) -> Void)? = nil) {
         if cpf_badgeView == nil {
-            // 无badge时，直接add
-            self.cpf_addBadge(with: count, maxCount: maxCount) { (label) in
-                handler?(label)
-            }
-            return
+            let badgeView = UIView()
+            self.addSubview(badgeView)
+            
+            // 当前view clipsToBounds必须设置为false，因为badge可能会超出当前view的bounds
+            self.clipsToBounds = true
+            
+            self.cpf_badgeView = badgeView
         }
+        
+        // frame
+        let viewFrame = self.bounds
+        let badgeRect = CGRect(x: viewFrame.maxX - radius, y: 0, width: radius * 2, height: radius * 2)
+        cpf_badgeView?.frame = badgeRect
+        
+        // attributes
+        cpf_badgeView?.backgroundColor = color
+        cpf_badgeView?.layer.cornerRadius = radius
+
+        // 自定义配置
+        if let badgeView = cpf_badgeView, let configureClosure = handler {
+            configureClosure(badgeView)
+        }
+    }
+    
+    /// 添加badge(数字)到当前view，重复调用时更新已有badge
+    /// 背景色默认red，文字颜色默认white，字体默认平方medium 10，文字水平边距默认2，最大数字默认99，偏移默认右上角(-7, -4)
+    ///
+    /// - Parameters:
+    ///   - count: 数值
+    ///   - maxCount: 显示的最大数值，超过时显示xx+的样式，默认99
+    ///   - handler: 自定义配置闭包，自定义其他配置时使用
+    public func cpf_addBadge(count: Int, maxCount: Int = 99, configure handler: ((UILabel) -> Void)?) {
+        if cpf_badgeView == nil {
+            let label = UILabel()
+            self.addSubview(label)
+            
+            label.font = UIFont.cpf_pingFang(10, weight: .medium)
+            label.textAlignment = .center
+            label.textColor = .white
+            label.backgroundColor = .red
+            label.clipsToBounds = true
+
+            // 当前view clipsToBounds必须设置为false，因为badge可能会超出当前view的bounds
+            self.clipsToBounds = true
+            
+            self.cpf_badgeView = label
+        }
+        
+        // 同一个view上不能添加多个badge
         guard let label = cpf_badgeView as? UILabel else { return }
         
         var text = "\(count)"
         if count > maxCount {
-            text = "99+"
+            text = "\(maxCount)+"
         }
+        
         label.text = text
         var size = text.cpf_size(font: label.font)
         size.width += 2 + 2
         size.height += 1
-        label.frame.size.width = max(size.width, size.height)
+
+        // frame
+        let viewFrame = self.bounds
+        let badgeFrame = CGRect(x: viewFrame.maxX - 7, y: viewFrame.minY - 4, width: max(size.width, size.height), height: size.height)
+        label.frame = badgeFrame
         
+        let radius = min(badgeFrame.width, badgeFrame.height) / 2
+        label.layer.cornerRadius = radius
+        
+        // 自定义配置
         handler?(label)
+
     }
     
-    /// 给当前view添加字符串badge，背景色默认red，文字颜色默认white，字体默认平方medium 10，文字水平边距默认3，偏移默认右上角(-7, -4)
-    public func cpf_addBadge(with text: String, configure handler: ((UILabel) -> Void)? = nil) {
-        if cpf_badgeView != nil { return }
+    /// 添加badge(文字)到当前view，重复调用更新已有badge
+    /// 背景色默认red，文字颜色默认white，字体默认平方medium 10，文字水平边距默认3，偏移默认右上角(-7, -4)
+    ///
+    /// - Parameters:
+    ///   - text: 显示的文本
+    ///   - handler: 自定义配置闭包，自定义其他配置时使用
+    public func cpf_addBadge(text: String, configure handler: ((UILabel) -> Void)? = nil) {
+        if cpf_badgeView == nil {
+            let label = UILabel()
+            self.addSubview(label)
+            
+            label.font = UIFont.cpf_pingFang(10, weight: .medium)
+            label.textAlignment = .center
+            label.textColor = .white
+            label.backgroundColor = .red
+            label.clipsToBounds = true
+            
+            // 当前view clipsToBounds必须设置为false，因为badge可能会超出当前view的bounds
+            self.clipsToBounds = true
+            
+            self.cpf_badgeView = label
+        }
         
-        // 当前view clipsToBounds必须设置为false，因为badge会超出当前view的bounds
-        self.clipsToBounds = false
-        
-        let badgeView = UILabel()
-        self.addSubview(badgeView)
-        self.cpf_badgeView = badgeView
+        // 同一个view上不能添加多个badge
+        guard let label = cpf_badgeView as? UILabel else { return }
         
         // attributes
-        badgeView.font = UIFont.cpf_pingFang(10, weight: .medium)
-        badgeView.textAlignment = .center
-        badgeView.textColor = .white
-        badgeView.backgroundColor = .red
-        badgeView.text = text
-        badgeView.clipsToBounds = true
+        label.text = text
         
-        var size = text.cpf_size(font: badgeView.font)
+        var size = text.cpf_size(font: label.font)
         size.width += 2 + 2
         size.height += 1
         
         // frame
-        let viewRect = self.bounds
-        let badgeRect = CGRect(x: viewRect.maxX - 7, y: viewRect.minY - 4, width: max(size.width, size.height), height: size.height)
-        badgeView.frame = badgeRect
+        let viewFrame = self.bounds
+        let badgeFrame = CGRect(x: viewFrame.maxX - 7, y: viewFrame.minY - 4, width: max(size.width, size.height), height: size.height)
+        label.frame = badgeFrame
         
-        let radius = min(badgeRect.width, badgeRect.height) / 2
-        badgeView.layer.cornerRadius = radius
+        let radius = min(badgeFrame.width, badgeFrame.height) / 2
+        label.layer.cornerRadius = radius
         
-        // 非默认属性，调用方配置
-        handler?(badgeView)
+        // 自定义配置
+        handler?(label)
     }
 
     public func cpf_removeBadge() {
@@ -143,7 +149,6 @@ extension UIView {
         get { return  objc_getAssociatedObject(self, &CPFBadgeConfigure.badgeKey) as? UIView }
         set { objc_setAssociatedObject(self, &CPFBadgeConfigure.badgeKey, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC) }
     }
-
 }
 
 extension Util {
@@ -155,4 +160,3 @@ extension Util {
         return views[index + 1].subviews.first as? UIImageView
     }
 }
-
