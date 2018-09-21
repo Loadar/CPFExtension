@@ -23,24 +23,33 @@ extension Cpf where Base: UIColor {
     /// 以rgb各项值生成UIColor对象
     ///
     /// - Parameters:
-    ///   - red: red值，0~1
-    ///   - green: green值，0~1
-    ///   - blue: blue值，0~1
+    ///   - red: red值
+    ///   - green: green值
+    ///   - blue: blue值
+    ///   - componentMax: 颜色component最大值，将red、green、blue从 0~componentMax 映射到 0~1之间
     /// - Returns: UIColor对象
-    public class func rgb(_ red: CGFloat, _ green: CGFloat, _ blue: CGFloat) -> UIColor {
-        return UIColor.cpf_rgb(red, green, blue)
+    public class func rgb(_ red: CGFloat, _ green: CGFloat, _ blue: CGFloat, componentMax: CGFloat = 1) -> UIColor {
+        let redValue = min(max(red / componentMax, 0), 1)
+        let greenValue = min(max(green / componentMax, 0), 1)
+        let blueValue = min(max(blue / componentMax, 0), 1)
+        return UIColor.cpf_rgb(redValue, greenValue, blueValue)
     }
     
     /// 以rgba各项值生成UIColor对象
     ///
     /// - Parameters:
-    ///   - red: red值，0~1
-    ///   - green: green值，0~1
-    ///   - blue: blue值，0~1
+    ///   - red: red值
+    ///   - green: green值
+    ///   - blue: blue值
     ///   - alpha: alpha值, 0~1
+    ///   - componentMax: 颜色component最大值，将red、green、blue从 0~componentMax 映射到 0~1之间
     /// - Returns: UIColor对象
-    public class func rgba(_ red: CGFloat, _ green: CGFloat, _ blue: CGFloat, _ alpha: CGFloat) -> UIColor {
-        return UIColor.cpf_rgba(red, green, blue, alpha)
+    public class func rgba(_ red: CGFloat, _ green: CGFloat, _ blue: CGFloat, _ alpha: CGFloat, componentMax: CGFloat = 1) -> UIColor {
+        let redValue = min(max(red / componentMax, 0), 1)
+        let greenValue = min(max(green / componentMax, 0), 1)
+        let blueValue = min(max(blue / componentMax, 0), 1)
+        let alphaValue = min(max(alpha, 0), 1)
+        return UIColor.cpf_rgba(redValue, greenValue, blueValue, alphaValue)
     }
     
     /// 指定alpha值，以base color为基础生成新的color对象

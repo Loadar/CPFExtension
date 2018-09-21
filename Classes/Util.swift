@@ -13,7 +13,7 @@ public class Util {
     private init() {}
     
     // DateFormatter对象生成比较慢，使用全局对象
-    let dateFormatter = {
+    lazy public var dateFormatter = {
        return DateFormatter()
     }()
     
@@ -67,7 +67,6 @@ public class Util {
         }
         return rect.height
     }
-
 }
 
 extension Util {

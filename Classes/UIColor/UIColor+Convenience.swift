@@ -111,7 +111,7 @@ extension UIColor {
         finalValue += Int(red + 0.5) << 16
         let alphaValue = Int(alpha + 0.5)
         if showAll || alphaValue < 255 {
-            // 显示所以通道或者颜色alpha非1
+            // 显示所有通道或者颜色alpha非1
             finalValue = finalValue << 8 + alphaValue
             return String(format: "%08x", finalValue)
         }
