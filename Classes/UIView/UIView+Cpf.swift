@@ -28,3 +28,12 @@ extension Cpf where Base: UIView {
         return line
     }
 }
+
+// MARK: - hit test
+extension Cpf where Base: UIView {
+    @discardableResult
+    public func hit(insets: UIEdgeInsets) -> Cpf {
+        base.cpf_hitTestEdgeInsets = insets
+        return self
+    }
+}

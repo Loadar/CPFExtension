@@ -9,15 +9,6 @@
 import UIKit
 import CPFChain
 
-// MARK: - Response Area
-extension Cpf where Base: UIButton {
-    @discardableResult
-    public func hit(insets: UIEdgeInsets) -> Cpf {
-        base.cpf_hitTestEdgeInsets = insets
-        return self
-    }
-}
-
 // MARK: - Util
 extension Cpf where Base: UIButton {
     @discardableResult

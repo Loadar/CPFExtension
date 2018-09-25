@@ -29,7 +29,6 @@
 		936345AA205A724A00C22B0A /* CPFExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936345A9205A724A00C22B0A /* CPFExtensionsTests.swift */; };
 		936345B5205A724A00C22B0A /* CPFExtensionsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936345B4205A724A00C22B0A /* CPFExtensionsUITests.swift */; };
 		936345C5205A730C00C22B0A /* UIColor+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936345C4205A730C00C22B0A /* UIColor+Convenience.swift */; };
-		936345C7205A7E1800C22B0A /* UIButton+ResponseArea.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936345C6205A7E1800C22B0A /* UIButton+ResponseArea.swift */; };
 		936345C9205A7FD000C22B0A /* UIImage+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936345C8205A7FD000C22B0A /* UIImage+Util.swift */; };
 		937041BC206B860400CB02CF /* UIAlertController+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 937041BB206B860400CB02CF /* UIAlertController+Util.swift */; };
 		937041BE206B8EB800CB02CF /* UIView+SnapShot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 937041BD206B8EB800CB02CF /* UIView+SnapShot.swift */; };
@@ -50,6 +49,7 @@
 		937041E1206BA30800CB02CF /* UIEdgeInsets+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 937041E0206BA30800CB02CF /* UIEdgeInsets+Convenience.swift */; };
 		937041E3206BA43800CB02CF /* UITextField+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 937041E2206BA43800CB02CF /* UITextField+Util.swift */; };
 		937041E52071C88B00CB02CF /* UITextView+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 937041E42071C88B00CB02CF /* UITextView+Util.swift */; };
+		93EDC6D6215A2FC5008BB2CA /* UIView+HitTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93EDC6D5215A2FC5008BB2CA /* UIView+HitTest.swift */; };
 		C79BBF0B7D0293F0878C5A7D /* Pods_CPFExtensions.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D9DDD7083B91D2E3B20E0BF /* Pods_CPFExtensions.framework */; };
 /* End PBXBuildFile section */
 
@@ -101,7 +101,6 @@
 		936345B4205A724A00C22B0A /* CPFExtensionsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPFExtensionsUITests.swift; sourceTree = "<group>"; };
 		936345B6205A724A00C22B0A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		936345C4205A730C00C22B0A /* UIColor+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Convenience.swift"; sourceTree = "<group>"; };
-		936345C6205A7E1800C22B0A /* UIButton+ResponseArea.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+ResponseArea.swift"; sourceTree = "<group>"; };
 		936345C8205A7FD000C22B0A /* UIImage+Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Util.swift"; sourceTree = "<group>"; };
 		937041BB206B860400CB02CF /* UIAlertController+Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertController+Util.swift"; sourceTree = "<group>"; };
 		937041BD206B8EB800CB02CF /* UIView+SnapShot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+SnapShot.swift"; sourceTree = "<group>"; };
@@ -122,6 +121,7 @@
 		937041E0206BA30800CB02CF /* UIEdgeInsets+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIEdgeInsets+Convenience.swift"; sourceTree = "<group>"; };
 		937041E2206BA43800CB02CF /* UITextField+Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Util.swift"; sourceTree = "<group>"; };
 		937041E42071C88B00CB02CF /* UITextView+Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextView+Util.swift"; sourceTree = "<group>"; };
+		93EDC6D5215A2FC5008BB2CA /* UIView+HitTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+HitTest.swift"; sourceTree = "<group>"; };
 		E5C9AF9154F168AF95E7AEB0 /* Pods-CPFExtensions.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CPFExtensions.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CPFExtensions/Pods-CPFExtensions.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -351,7 +351,6 @@
 		937041C9206B957C00CB02CF /* UIButton */ = {
 			isa = PBXGroup;
 			children = (
-				936345C6205A7E1800C22B0A /* UIButton+ResponseArea.swift */,
 				937041C5206B927100CB02CF /* UIButton+Util.swift */,
 				937041CA206B959400CB02CF /* UIButton+Cpf.swift */,
 			);
@@ -365,6 +364,7 @@
 				937041BD206B8EB800CB02CF /* UIView+SnapShot.swift */,
 				937041C7206B92D100CB02CF /* UIView+Progress.swift */,
 				933DFE3B20722AE000D24830 /* UIView+Badge.swift */,
+				93EDC6D5215A2FC5008BB2CA /* UIView+HitTest.swift */,
 				933DFE5C207350D600D24830 /* UIView+Cpf.swift */,
 			);
 			path = UIView;
@@ -567,6 +567,7 @@
 				937041CF206B96F500CB02CF /* UIAlertController+Cpf.swift in Sources */,
 				937041BE206B8EB800CB02CF /* UIView+SnapShot.swift in Sources */,
 				93476E4B2091783C00AE61DC /* CPFGradient.swift in Sources */,
+				93EDC6D6215A2FC5008BB2CA /* UIView+HitTest.swift in Sources */,
 				937041E52071C88B00CB02CF /* UITextView+Util.swift in Sources */,
 				937041DB206BA07D00CB02CF /* Date+String.swift in Sources */,
 				937041E3206BA43800CB02CF /* UITextField+Util.swift in Sources */,
@@ -588,7 +589,6 @@
 				937041E1206BA30800CB02CF /* UIEdgeInsets+Convenience.swift in Sources */,
 				937041C6206B927100CB02CF /* UIButton+Util.swift in Sources */,
 				937041D7206B9F1B00CB02CF /* String+Date.swift in Sources */,
-				936345C7205A7E1800C22B0A /* UIButton+ResponseArea.swift in Sources */,
 				933DFE532073318D00D24830 /* UIImage+Cpf.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
