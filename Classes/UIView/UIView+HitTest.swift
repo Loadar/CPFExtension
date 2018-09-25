@@ -35,7 +35,7 @@ extension UIView {
     }
 }
 
-class CPFContainerView: UIView {
+public class CPFContainerView: UIView {
     override open func point(inside point: CGPoint, with event: UIEvent?) -> Bool {
         guard !self.isHidden else { return super.point(inside: point, with: event) }
         guard self.cpf_hitTestEdgeInsets != .zero else { return super.point(inside: point, with: event) }
