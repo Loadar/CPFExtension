@@ -29,20 +29,27 @@ public class Util {
     public class var statusBarHeight: CGFloat {
         if let height = shared.statusHeight { return height }
         let height = UIApplication.shared.statusBarFrame.height
-        if height < 1e-6 {
-            return isIPhoneX ? 44 : 20
+        if height > 1e-6 {
+            // 缓存之
+            shared.statusHeight = height
+            return height
         }
         
-        shared.statusHeight = height
-        return height
+        // 未获取到当前状态栏高度时，使用默认值, iPhoneX系列默认44， 其他默认20
+        return isIPhoneX ? 44 : 20
     }
     
-    // 根据屏幕尺寸判断是否为iPhoneX
+    // 根据安全区域判定是否iPhoneX
     public class var isIPhoneX: Bool {
         if let status = shared.isIPhoneX { return status }
-        let size = screenSize
-        let iPhoneXSize = CGSize(width: 375, height: 812)
-        let status = abs(size.width - iPhoneXSize.width) < 1e-6 && abs(size.height - iPhoneXSize.height) < 1e-6
+        
+        // 若安全区域底部大于0，可判定为iPhoneX系列
+        var status = false
+        if #available(iOS 11, *) {
+            if let window = UIApplication.shared.keyWindow, window.safeAreaInsets.bottom > 0 {
+                status = true
+            }
+        }
         shared.isIPhoneX = status
         return status
     }
