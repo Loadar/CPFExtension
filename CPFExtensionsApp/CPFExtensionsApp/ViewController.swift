@@ -78,6 +78,8 @@ class ViewController: UIViewController {
         Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(updateBaged(_:)), userInfo: nil, repeats: true)
         
         
+        print(Util.isIPhoneX, Util.statusBarHeight, Util.topAdjustHeight, Util.bottomAdjustHeight)
+        
     }
     
     @objc private func updateBaged(_ timer: Timer) {

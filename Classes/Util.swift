@@ -45,10 +45,12 @@ public class Util {
         
         // 若安全区域底部大于0，可判定为iPhoneX系列
         var status = false
-        if #available(iOS 11, *) {
-            if let window = UIApplication.shared.keyWindow, window.safeAreaInsets.bottom > 0 {
+        if #available(iOS 11.0, *) {
+            if let window = UIApplication.shared.windows.first, window.safeAreaInsets.bottom > 0 {
                 status = true
             }
+        } else {
+            // Fallback on earlier versions
         }
         shared.isIPhoneX = status
         return status
@@ -60,7 +62,7 @@ public class Util {
     }
     
     public class var bottomAdjustHeight: CGFloat {
-        // iPhoneX底部非列表时，需要留34pt空间
+        // iPhoneX底部非列表时，需要留34pt空间(直接指定数值，防止系统的安全区域计算涉及到其他空间)
         return isIPhoneX ? 34 : 0
     }
     
