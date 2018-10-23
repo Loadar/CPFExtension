@@ -51,7 +51,7 @@ extension Cpf where Base: CPFGradient {
 
 extension Cpf where Base: UITextField {
     @discardableResult
-    public func background(radient: CPFGradient, state: UIControlState? = nil) -> Cpf {
+    public func background(radient: CPFGradient, state: UIControl.State? = nil) -> Cpf {
         let image = radient.image
         if state == .disabled {
             base.disabledBackground = image
@@ -62,20 +62,20 @@ extension Cpf where Base: UITextField {
     }
 
     @discardableResult
-    public func background(radient: Cpf<CPFGradient>, state: UIControlState? = nil) -> Cpf {
+    public func background(radient: Cpf<CPFGradient>, state: UIControl.State? = nil) -> Cpf {
         return self.background(radient: radient.base, state: state)
     }
 }
 
 extension Cpf where Base: UIButton {
     @discardableResult
-    public func background(radient: CPFGradient, state: UIControlState = .normal) -> Cpf {
+    public func background(radient: CPFGradient, state: UIControl.State = .normal) -> Cpf {
         base.setBackgroundImage(radient.image, for: state)
         return self
     }
     
     @discardableResult
-    public func background(radient: Cpf<CPFGradient>, state: UIControlState = .normal) -> Cpf {
+    public func background(radient: Cpf<CPFGradient>, state: UIControl.State = .normal) -> Cpf {
         return self.background(radient: radient.base, state: state)
     }
 }

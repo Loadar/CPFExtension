@@ -11,7 +11,7 @@ import UIKit
 // 指定状态背景色
 extension UIButton {
     /// 将背景色以图片代替，可以设置不同状态的背景色
-    public func cpf_setBackground(color: UIColor, for state: UIControlState) {
+    public func cpf_setBackground(color: UIColor, for state: UIControl.State) {
         DispatchQueue.global().async { [weak self] in
             let image = UIImage.cpf_image(with: color)
             DispatchQueue.main.async {

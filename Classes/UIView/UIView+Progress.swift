@@ -13,10 +13,10 @@ extension UIView {
         static var progressKey = 335
     }
     
-    public func cpf_showProgress(with style: UIActivityIndicatorViewStyle = .white, offset: CGFloat = 10) {
+    public func cpf_showProgress(with style: UIActivityIndicatorView.Style = .white, offset: CGFloat = 10) {
         var progressView = self.cpf_progressView
         if progressView == nil {
-            let theProgressView = UIActivityIndicatorView(activityIndicatorStyle: style)
+            let theProgressView = UIActivityIndicatorView(style: style)
             self.addSubview(theProgressView)
             theProgressView.frame = CGRect(x: offset, y: bounds.midY - 5, width: 10, height: 10)
             progressView = theProgressView

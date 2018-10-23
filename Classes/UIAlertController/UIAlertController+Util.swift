@@ -15,7 +15,7 @@ extension UIAlertController {
     public class var cpf_sheet: UIAlertController {
         return UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
     }
-    public class func cpf_alert(with style: UIAlertControllerStyle = .alert) -> UIAlertController {
+    public class func cpf_alert(with style: UIAlertController.Style = .alert) -> UIAlertController {
         return UIAlertController(title: nil, message: nil, preferredStyle: style)
     }
 }

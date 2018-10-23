@@ -11,7 +11,7 @@ import UIKit
 extension String {
     /// 获取指定字体，段落风格(可选)下，当前字符串大小
     public func cpf_size(font: UIFont?, paragraphStyle: NSParagraphStyle? = nil, limited: CGSize? = nil) -> CGSize {
-        var attributes: [NSAttributedStringKey: Any] = [:]
+        var attributes: [NSAttributedString.Key: Any] = [:]
         attributes[.font] = font
         attributes[.paragraphStyle] = paragraphStyle
         

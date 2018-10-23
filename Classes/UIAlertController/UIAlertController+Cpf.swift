@@ -11,7 +11,7 @@ import CPFChain
 
 // MARK: -Util
 extension Cpf where Base: UIAlertController {
-    public static func alert(_ style: UIAlertControllerStyle = .alert) -> Cpf<UIAlertController> {
+    public static func alert(_ style: UIAlertController.Style = .alert) -> Cpf<UIAlertController> {
         return UIAlertController.cpf_alert(with: style).cpf
     }
     
@@ -28,7 +28,7 @@ extension Cpf where Base: UIAlertController {
     }
     
     @discardableResult
-    public func action(_ title: String, style: UIAlertActionStyle = .default, handler: ((UIAlertAction) -> Void)? = nil) -> Cpf {
+    public func action(_ title: String, style: UIAlertAction.Style = .default, handler: ((UIAlertAction) -> Void)? = nil) -> Cpf {
         base.addAction(UIAlertAction(title: title, style: style, handler: handler))
         return self
     }

@@ -390,7 +390,7 @@
 				9363458D205A724A00C22B0A /* Sources */,
 				9363458E205A724A00C22B0A /* Frameworks */,
 				9363458F205A724A00C22B0A /* Resources */,
-				4DFD4F1C043AED093403328A /* [CP] Embed Pods Frameworks */,
+				538B9AC839784D67C860891A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -449,15 +449,18 @@
 				TargetAttributes = {
 					93634590205A724A00C22B0A = {
 						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 1000;
 						ProvisioningStyle = Automatic;
 					};
 					936345A4205A724A00C22B0A = {
 						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 1000;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 93634590205A724A00C22B0A;
 					};
 					936345AF205A724A00C22B0A = {
 						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 1000;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 93634590205A724A00C22B0A;
 					};
@@ -512,22 +515,26 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		4DFD4F1C043AED093403328A /* [CP] Embed Pods Frameworks */ = {
+		538B9AC839784D67C860891A /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
+			inputFileListPaths = (
+			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-CPFExtensions/Pods-CPFExtensions-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-CPFExtensions/Pods-CPFExtensions-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/CPFChain/CPFChain.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CPFChain.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CPFExtensions/Pods-CPFExtensions-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CPFExtensions/Pods-CPFExtensions-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		B6EC78662A260E704AFCFAC1 /* [CP] Check Pods Manifest.lock */ = {
@@ -767,9 +774,10 @@
 				INFOPLIST_FILE = CPFExtensionsApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ruhnn.holding.CPFExtensions;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -784,9 +792,10 @@
 				INFOPLIST_FILE = CPFExtensionsApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ruhnn.holding.CPFExtensions;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -805,7 +814,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ruhnn.holding.CPFExtensionsTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CPFExtensions.app/CPFExtensions";
 			};
@@ -825,7 +834,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ruhnn.holding.CPFExtensionsTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CPFExtensions.app/CPFExtensions";
 			};
@@ -840,7 +849,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ruhnn.holding.CPFExtensionsUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = CPFExtensions;
 			};
@@ -855,7 +864,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ruhnn.holding.CPFExtensionsUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = CPFExtensions;
 			};

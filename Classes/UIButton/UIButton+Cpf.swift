@@ -12,7 +12,7 @@ import CPFChain
 // MARK: - Util
 extension Cpf where Base: UIButton {
     @discardableResult
-    public func background(color: UIColor, state: UIControlState) -> Cpf {
+    public func background(color: UIColor, state: UIControl.State) -> Cpf {
         base.cpf_setBackground(color: color, for: state)
         return self
     }

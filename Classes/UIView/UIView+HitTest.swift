@@ -30,7 +30,7 @@ extension UIView {
     func check(point: CGPoint) -> Bool {
         // 根据指定insets，确定按钮响应区域
         let viewBounds = self.bounds
-        let hitFrame = UIEdgeInsetsInsetRect(viewBounds, self.cpf_hitTestEdgeInsets)
+        let hitFrame = viewBounds.inset(by: self.cpf_hitTestEdgeInsets)
         return hitFrame.contains(point)
     }
 }
