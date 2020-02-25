@@ -27,15 +27,7 @@ public class Util {
     public class var screenWidth: CGFloat { return screenRect.width }
     public class var screenHeight: CGFloat { return screenRect.height }
     public class var statusBarHeight: CGFloat {
-        if let height = shared.statusHeight { return height }
-        let height = UIApplication.shared.statusBarFrame.height
-        if height > 1e-6 {
-            // 缓存之
-            shared.statusHeight = height
-            return height
-        }
-        
-        // 未获取到当前状态栏高度时，使用默认值, iPhoneX系列默认44， 其他默认20
+        // 使用指定默认值, iPhoneX系列默认44， 其他默认20
         return isIPhoneX ? 44 : 20
     }
     
@@ -62,6 +54,16 @@ public class Util {
     }
     
     public class var bottomAdjustHeight: CGFloat {
+        
+        // 优先从安全区域内取值
+        if #available(iOS 11.0, *) {
+            if let window = UIApplication.shared.windows.first {
+                return window.safeAreaInsets.bottom
+            }
+        } else {
+            // Fallback on earlier versions
+        }
+
         // iPhoneX底部非列表时，需要留34pt空间(直接指定数值，防止系统的安全区域计算涉及到其他空间)
         return isIPhoneX ? 34 : 0
     }
