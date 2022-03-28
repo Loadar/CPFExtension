@@ -13,9 +13,18 @@ public class Util {
     private init() {}
     
     // DateFormatter对象生成比较慢，使用全局对象
-    lazy public var dateFormatter = {
-       return DateFormatter()
+    lazy public var dateFormatter: DateFormatter = {
+       let formatter = DateFormatter()
+        // 保证时间格式的转换不受时间区间的影响
+        formatter.locale = Locale(identifier: "en_US_POSIX")
+        return formatter
     }()
+    
+    public func dateFormatter(with format: String) -> DateFormatter {
+        let formatter = self.dateFormatter
+        formatter.dateFormat = format
+        return formatter
+    }
     
     // 默认statusBar，tabBar高度统一
     private var isIPhoneX: Bool?

@@ -10,16 +10,14 @@ import Foundation
 
 extension Date {
     public func cpf_string(with format: String) -> String {
-        let dateFormatter = Util.shared.dateFormatter
-        dateFormatter.dateFormat = format
+        let dateFormatter = Util.shared.dateFormatter(with: format)
         return dateFormatter.string(from: self)
     }
     
     // 当前为哪一年
     public static var cpf_currentYear: String {
         let date = Date()
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy"
+        let dateFormatter = Util.shared.dateFormatter(with: "yyyy")
         return dateFormatter.string(from: date)
     }
 }

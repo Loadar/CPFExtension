@@ -22,8 +22,7 @@ extension String {
     ///   - currentFormat: 当前日期格式, 默认为"yyyy-MM-dd HH:mm:ss.S"
     /// - Returns: 结果字符串
     public func cpf_dateString(with format: String, from currentFormat: String = "yyyy-MM-dd HH:mm:ss.S") -> String {
-        let dateFormatter = Util.shared.dateFormatter
-        dateFormatter.dateFormat = currentFormat
+        let dateFormatter = Util.shared.dateFormatter(with: currentFormat)
         guard let date = dateFormatter.date(from: self) else {
             // 转换日期格式出错
             return ""
@@ -37,8 +36,7 @@ extension String {
     /// - Parameter format: 指定的日期格式，默认是yyyy-MM-dd HH:mm:ss.S
     /// - Returns: Date对象
     public func cpf_date(_ format: String = "yyyy-MM-dd HH:mm:ss.S") -> Date? {
-        let dateFormatter = Util.shared.dateFormatter
-        dateFormatter.dateFormat = format
+        let dateFormatter = Util.shared.dateFormatter(with: format)
         return dateFormatter.date(from: self)
     }
 }
