@@ -22,12 +22,32 @@ extension Cpf where Base: UIImage {
         return base.cpf_tint(color)
     }
     
-    public static func gradient(size: CGSize, colors: [UIColor], locations: [Double]? = nil, start: CGPoint? = nil, end: CGPoint? = nil) -> UIImage? {
+    public static func gradient(
+        size: CGSize,
+        colors: [UIColor],
+        locations: [Double]? = nil,
+        start: CGPoint? = nil,
+        end: CGPoint? = nil
+    ) -> UIImage? {
         return UIImage.cpf_gradient(size: size, colors: colors, locations: locations, start: start, end: end)
     }
     
-    public static func radialGradient(size: CGSize, colors: [UIColor], locations: [Double]? = nil) -> UIImage? {
-        return UIImage.cpf_radialGradient(size: size, colors: colors, locations: locations)
+    public static func radialGradient(
+        size: CGSize,
+        colors: [UIColor],
+        locations: [Double]? = nil,
+        radius: CGFloat? = nil,
+        center: CGPoint? = nil,
+        options: CGGradientDrawingOptions = []
+    ) -> UIImage? {
+        return UIImage.cpf_radialGradient(
+            size: size,
+            colors: colors,
+            locations: locations,
+            radius: radius,
+            center: center,
+            options: options
+        )
     }
     
     public func resize(to size: CGSize, opaque: Bool = false) -> UIImage? {

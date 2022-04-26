@@ -130,23 +130,38 @@ extension UIImage {
     ///   - size: 图像大小
     ///   - colors: 颜色列表
     ///   - locations: 位置列表，数目与颜色列表一致
+    ///   - radius: 总半径，单位为pt，不指定时，默认为图像宽高较长的一边的一般
+    ///   - center: 圆心，以单位坐标表示，不指定时为图像中心
+    ///   - options: 额外选项, 默认空
     /// - Returns: 结果图像
-    public class func cpf_radialGradient(size: CGSize, colors: [UIColor], locations: [Double]? = nil) -> UIImage? {
+    public class func cpf_radialGradient(
+        size: CGSize,
+        colors: [UIColor],
+        locations: [Double]? = nil,
+        radius: CGFloat? = nil,
+        center: CGPoint? = nil,
+        options: CGGradientDrawingOptions = []
+    ) -> UIImage? {
         let scale = UIScreen.main.scale
         let finalSize = CGSize(width: size.width * scale, height: size.height * scale)
         
         // 圆心
-        let center = CGPoint(x: finalSize.width / 2, y: finalSize.height / 2)
+        let finalCenter: CGPoint
+        if let center = center {
+            finalCenter = CGPoint(x: center.x * finalSize.width, y: center.y * finalSize.height)
+        } else {
+            finalCenter = CGPoint(x: finalSize.width / 2, y: finalSize.height / 2)
+        }
         
-        var theLocations = [Double]()
+        var finalLocations = [Double]()
         let count = colors.count
         if locations == nil, count > 1 {
             // 默认数值平均分配
             for i in 0..<count {
-                theLocations.append(Double(i) / Double(count - 1))
+                finalLocations.append(Double(i) / Double(count - 1))
             }
         } else {
-            theLocations = locations!
+            finalLocations = locations!
         }
         
         let space = CGColorSpaceCreateDeviceRGB()
@@ -162,21 +177,31 @@ extension UIImage {
             components.append(blue)
             components.append(alpha)
         }
-        let gradient = CGGradient(colorSpace: space,
-                                  colorComponents: components,
-                                  locations: theLocations.map { CGFloat($0) },
-                                  count: colors.count)
+        let gradient = CGGradient(
+            colorSpace: space,
+            colorComponents: components,
+            locations: nil,//finalLocations.map { CGFloat($0) }//,
+            count: colors.count
+        )
         if gradient == nil { return nil }
+        
+        let endRaidus: CGFloat
+        if let radius = radius {
+            endRaidus = radius * scale
+        } else {
+            endRaidus = max(finalSize.width, finalSize.width) * 0.5
+        }
 
         return cpf_render(size: finalSize) {
             guard let context = UIGraphicsGetCurrentContext() else { return }
-            // end radius 使用对角线一半长度, 以保证整个区域无空白
-            context.drawRadialGradient(gradient!,
-                                       startCenter: center,
-                                       startRadius: 1.0,
-                                       endCenter: center,
-                                       endRadius: sqrt(size.width * size.width + size.height * size.height) / 2,
-                                       options:[.drawsBeforeStartLocation, .drawsAfterEndLocation])
+            context.drawRadialGradient(
+                gradient!,
+                startCenter: finalCenter,
+                startRadius: 0,
+                endCenter: finalCenter,
+                endRadius: endRaidus,
+                options: options
+            )
         }
     }
 }

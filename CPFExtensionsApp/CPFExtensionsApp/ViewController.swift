@@ -80,6 +80,11 @@ class ViewController: UIViewController {
         
         print(Util.isIPhoneX, Util.statusBarHeight, Util.topAdjustHeight, Util.bottomAdjustHeight)
         
+//        let size = CGSize(width: 214, height: 36)
+//        let radius = sqrt(size.width * size.width + size.height * size.height)
+//        let wholeImage = UIImage.cpf.radialGradient(size: .cpf(radius * 2), colors: [.cpf_hex("8ca3ff"), .cpf_hex("6a83eb"), .cpf_hex("8ca3ff")])
+//        let croppedImage = UIImage.cpf.radialGradient(size: size, colors: [.cpf_hex("8ca3ff"), .cpf_hex("6a83eb"), .cpf_hex("8ca3ff")], radius: radius, center: .cpf(y: 1))
+        
     }
     
     @objc private func updateBaged(_ timer: Timer) {
