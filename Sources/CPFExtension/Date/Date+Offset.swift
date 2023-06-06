@@ -117,7 +117,7 @@ public extension Cpf where Wrapped == Date {
     }
     
     /// 从当前日期到指定日期相隔的天数
-    func adayOffset(to date: Date) -> Int {
+    func dayOffset(to date: Date) -> Int {
         Self.dayOffset(from: wrapped, to: date)
     }
     
