@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name = 'CPFExtension'
-  s.version = '1.1.0'
+  s.version = '1.1.1'
   s.summary = 'Swift一些实用扩展'
   s.license = { :type => 'MIT', :file => 'LICENSE' }
   s.author = { 'chenpengfei' => 'afeiafeia@163.com' }
@@ -8,7 +8,7 @@ Pod::Spec.new do |s|
   s.homepage = 'https://github.com/Loadar/CPFExtension'
 
   s.ios.deployment_target = "8.0"
-  s.source_files = 'Classes/*.swift', 'Classes/*/*.swift'
+  s.source_files = 'Sources/CPFExtension/*.swift', 'Sources/CPFExtension/*/*.swift'
   s.requires_arc = true
   s.dependency 'CPFChain'
 end

@@ -1,24 +1,25 @@
 // swift-tools-version: 5.8
+// The swift-tools-version declares the minimum version of Swift required to build this package.
 
 import PackageDescription
 
 let package = Package(
-    name: "CPFExtensions",
+    name: "CPFExtension",
     products: [
         .library(
-            name: "CPFExtensions",
-            targets: ["CPFExtensions"]),
+            name: "CPFExtension",
+            targets: ["CPFExtension"]),
         .library(
-            name: "CPFExtensions-Dynamic",
+            name: "CPFExtension-Dynamic",
             type: .dynamic,
-            targets: ["CPFExtensions"]),
+            targets: ["CPFExtension"]),
     ],
     dependencies: [
         .package(url: "https://github.com/Loadar/CPFChain.git", from: Version(stringLiteral: "2.2.3")),
     ],
     targets: [
         .target(
-            name: "CPFExtensions",
+            name: "CPFExtension",
             dependencies: ["CPFChain"]),
     ]
 )

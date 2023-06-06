@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import CPFExtensions
+import CPFExtension
 
 class ViewController: UIViewController {
     

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		938F4FBE2A2EE29A00B8E380 /* CPFExtension-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 938F4FBD2A2EE29A00B8E380 /* CPFExtension-Dynamic */; };
+		938F4FBF2A2EE29A00B8E380 /* CPFExtension-Dynamic in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 938F4FBD2A2EE29A00B8E380 /* CPFExtension-Dynamic */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		93D63A7A2A29DEDD0099F919 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D63A792A29DEDD0099F919 /* AppDelegate.swift */; };
 		93D63A7C2A29DEDD0099F919 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D63A7B2A29DEDD0099F919 /* SceneDelegate.swift */; };
 		93D63A7E2A29DEDD0099F919 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D63A7D2A29DEDD0099F919 /* ViewController.swift */; };
@@ -14,8 +16,6 @@
 		93D63A832A29DEDF0099F919 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 93D63A822A29DEDF0099F919 /* Assets.xcassets */; };
 		93D63A862A29DEDF0099F919 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93D63A842A29DEDF0099F919 /* LaunchScreen.storyboard */; };
 		93D63A8F2A29DEF10099F919 /* CPFExtension.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 93D63A8E2A29DEF10099F919 /* CPFExtension.podspec */; };
-		93D63A942A29DFC50099F919 /* CPFExtensions-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 93D63A932A29DFC50099F919 /* CPFExtensions-Dynamic */; };
-		93D63A952A29DFC50099F919 /* CPFExtensions-Dynamic in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 93D63A932A29DFC50099F919 /* CPFExtensions-Dynamic */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,7 +25,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				93D63A952A29DFC50099F919 /* CPFExtensions-Dynamic in Embed Frameworks */,
+				938F4FBF2A2EE29A00B8E380 /* CPFExtension-Dynamic in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -33,6 +33,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		938F4FBC2A2EE12E00B8E380 /* CPFExtensions */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = CPFExtensions; path = ..; sourceTree = "<group>"; };
 		93D63A762A29DEDD0099F919 /* Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		93D63A792A29DEDD0099F919 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		93D63A7B2A29DEDD0099F919 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -42,7 +43,6 @@
 		93D63A852A29DEDF0099F919 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		93D63A872A29DEDF0099F919 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		93D63A8E2A29DEF10099F919 /* CPFExtension.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = CPFExtension.podspec; path = ../../CPFExtension.podspec; sourceTree = "<group>"; };
-		93D63A912A29DF2A0099F919 /* CPFExtensions */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = CPFExtensions; path = ..; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,17 +50,25 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				93D63A942A29DFC50099F919 /* CPFExtensions-Dynamic in Frameworks */,
+				938F4FBE2A2EE29A00B8E380 /* CPFExtension-Dynamic in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		938F4FBB2A2EE12E00B8E380 /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+				938F4FBC2A2EE12E00B8E380 /* CPFExtensions */,
+			);
+			name = Packages;
+			sourceTree = "<group>";
+		};
 		93D63A6D2A29DEDD0099F919 = {
 			isa = PBXGroup;
 			children = (
-				93D63A902A29DF2A0099F919 /* Packages */,
+				938F4FBB2A2EE12E00B8E380 /* Packages */,
 				93D63A8D2A29DEE50099F919 /* Pod */,
 				93D63A782A29DEDD0099F919 /* Demo */,
 				93D63A772A29DEDD0099F919 /* Products */,
@@ -98,14 +106,6 @@
 			path = Pod;
 			sourceTree = "<group>";
 		};
-		93D63A902A29DF2A0099F919 /* Packages */ = {
-			isa = PBXGroup;
-			children = (
-				93D63A912A29DF2A0099F919 /* CPFExtensions */,
-			);
-			name = Packages;
-			sourceTree = "<group>";
-		};
 		93D63A922A29DFC50099F919 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -131,7 +131,7 @@
 			);
 			name = Demo;
 			packageProductDependencies = (
-				93D63A932A29DFC50099F919 /* CPFExtensions-Dynamic */,
+				938F4FBD2A2EE29A00B8E380 /* CPFExtension-Dynamic */,
 			);
 			productName = Demo;
 			productReference = 93D63A762A29DEDD0099F919 /* Demo.app */;
@@ -409,9 +409,9 @@
 /* End XCConfigurationList section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		93D63A932A29DFC50099F919 /* CPFExtensions-Dynamic */ = {
+		938F4FBD2A2EE29A00B8E380 /* CPFExtension-Dynamic */ = {
 			isa = XCSwiftPackageProductDependency;
-			productName = "CPFExtensions-Dynamic";
+			productName = "CPFExtension-Dynamic";
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
