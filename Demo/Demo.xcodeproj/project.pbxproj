@@ -9,13 +9,13 @@
 /* Begin PBXBuildFile section */
 		938F4FBE2A2EE29A00B8E380 /* CPFExtension-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 938F4FBD2A2EE29A00B8E380 /* CPFExtension-Dynamic */; };
 		938F4FBF2A2EE29A00B8E380 /* CPFExtension-Dynamic in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 938F4FBD2A2EE29A00B8E380 /* CPFExtension-Dynamic */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		938F4FC52A2EE3D100B8E380 /* CPFExtension.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 938F4FC42A2EE3D100B8E380 /* CPFExtension.podspec */; };
 		93D63A7A2A29DEDD0099F919 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D63A792A29DEDD0099F919 /* AppDelegate.swift */; };
 		93D63A7C2A29DEDD0099F919 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D63A7B2A29DEDD0099F919 /* SceneDelegate.swift */; };
 		93D63A7E2A29DEDD0099F919 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D63A7D2A29DEDD0099F919 /* ViewController.swift */; };
 		93D63A812A29DEDD0099F919 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93D63A7F2A29DEDD0099F919 /* Main.storyboard */; };
 		93D63A832A29DEDF0099F919 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 93D63A822A29DEDF0099F919 /* Assets.xcassets */; };
 		93D63A862A29DEDF0099F919 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93D63A842A29DEDF0099F919 /* LaunchScreen.storyboard */; };
-		93D63A8F2A29DEF10099F919 /* CPFExtension.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 93D63A8E2A29DEF10099F919 /* CPFExtension.podspec */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -33,7 +33,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		938F4FBC2A2EE12E00B8E380 /* CPFExtensions */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = CPFExtensions; path = ..; sourceTree = "<group>"; };
+		938F4FC12A2EE39600B8E380 /* CPFExtension */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = CPFExtension; path = ..; sourceTree = "<group>"; };
+		938F4FC42A2EE3D100B8E380 /* CPFExtension.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = CPFExtension.podspec; path = ../CPFExtension.podspec; sourceTree = "<group>"; };
 		93D63A762A29DEDD0099F919 /* Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		93D63A792A29DEDD0099F919 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		93D63A7B2A29DEDD0099F919 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -42,7 +43,6 @@
 		93D63A822A29DEDF0099F919 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		93D63A852A29DEDF0099F919 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		93D63A872A29DEDF0099F919 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		93D63A8E2A29DEF10099F919 /* CPFExtension.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = CPFExtension.podspec; path = ../../CPFExtension.podspec; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,19 +57,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		938F4FBB2A2EE12E00B8E380 /* Packages */ = {
+		938F4FC02A2EE39600B8E380 /* Packages */ = {
 			isa = PBXGroup;
 			children = (
-				938F4FBC2A2EE12E00B8E380 /* CPFExtensions */,
+				938F4FC12A2EE39600B8E380 /* CPFExtension */,
 			);
 			name = Packages;
+			sourceTree = "<group>";
+		};
+		938F4FC22A2EE3B300B8E380 /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				938F4FC42A2EE3D100B8E380 /* CPFExtension.podspec */,
+			);
+			name = Pod;
 			sourceTree = "<group>";
 		};
 		93D63A6D2A29DEDD0099F919 = {
 			isa = PBXGroup;
 			children = (
-				938F4FBB2A2EE12E00B8E380 /* Packages */,
-				93D63A8D2A29DEE50099F919 /* Pod */,
+				938F4FC02A2EE39600B8E380 /* Packages */,
+				938F4FC22A2EE3B300B8E380 /* Pod */,
 				93D63A782A29DEDD0099F919 /* Demo */,
 				93D63A772A29DEDD0099F919 /* Products */,
 				93D63A922A29DFC50099F919 /* Frameworks */,
@@ -96,14 +104,6 @@
 				93D63A872A29DEDF0099F919 /* Info.plist */,
 			);
 			path = Demo;
-			sourceTree = "<group>";
-		};
-		93D63A8D2A29DEE50099F919 /* Pod */ = {
-			isa = PBXGroup;
-			children = (
-				93D63A8E2A29DEF10099F919 /* CPFExtension.podspec */,
-			);
-			path = Pod;
 			sourceTree = "<group>";
 		};
 		93D63A922A29DFC50099F919 /* Frameworks */ = {
@@ -177,7 +177,7 @@
 			files = (
 				93D63A862A29DEDF0099F919 /* LaunchScreen.storyboard in Resources */,
 				93D63A832A29DEDF0099F919 /* Assets.xcassets in Resources */,
-				93D63A8F2A29DEF10099F919 /* CPFExtension.podspec in Resources */,
+				938F4FC52A2EE3D100B8E380 /* CPFExtension.podspec in Resources */,
 				93D63A812A29DEDD0099F919 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
