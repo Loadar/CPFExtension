@@ -15,14 +15,20 @@ public class Util {
     // DateFormatter对象生成比较慢，使用全局对象
     lazy public var dateFormatter: DateFormatter = {
        let formatter = DateFormatter()
-        // 保证时间格式的转换不受时间区间的影响
-        formatter.locale = Locale(identifier: "en_US_POSIX")
+        // 使用东八区时间
+        formatter.locale = Locale(identifier: "zh-Hans-CN")
+        if let timeZone = TimeZone(identifier: "Asia/Shanghai") {
+            formatter.timeZone = timeZone
+        }
+
         return formatter
     }()
     
     // 调整过时区的calendar
     lazy public var calendar: Calendar = {
         var calendar = Calendar.current
+        // 使用东八区时间
+        calendar.locale = Locale(identifier: "zh-Hans-CN")
         if let timeZone = TimeZone(identifier: "Asia/Shanghai") {
             calendar.timeZone = timeZone
         }
