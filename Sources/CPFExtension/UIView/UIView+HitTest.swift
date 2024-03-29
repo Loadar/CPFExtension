@@ -44,7 +44,7 @@ public class CPFContainerView: UIView {
 }
 
 public extension UIButton {
-    override open func point(inside point: CGPoint, with event: UIEvent?) -> Bool {
+    override func point(inside point: CGPoint, with event: UIEvent?) -> Bool {
         guard self.isEnabled && !self.isHidden else { return super.point(inside: point, with: event) }
         guard self.cpf_hitTestEdgeInsets != .zero else { return super.point(inside: point, with: event) }
         return self.check(point: point)
@@ -52,10 +52,9 @@ public extension UIButton {
 }
 
 public extension UILabel {
-    override open func point(inside point: CGPoint, with event: UIEvent?) -> Bool {
+    override func point(inside point: CGPoint, with event: UIEvent?) -> Bool {
         guard !self.isHidden else { return super.point(inside: point, with: event) }
         guard self.cpf_hitTestEdgeInsets != .zero else { return super.point(inside: point, with: event) }
         return self.check(point: point)
     }
 }
-
