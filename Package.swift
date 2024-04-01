@@ -21,8 +21,7 @@ let package = Package(
         .target(
             name: "CPFExtension",
             dependencies: [.product(name: "CPFChainDynamic", package: "CPFChain")],
-            path: "Sources",
-            resources: [.copy("PrivacyInfo.xcprivacy")]
+            path: "Sources"
         ),
     ]
 )
