@@ -10,17 +10,17 @@ let package = Package(
             name: "CPFExtension",
             targets: ["CPFExtension"]),
         .library(
-            name: "CPFExtension-Dynamic",
+            name: "CPFExtensionDynamic",
             type: .dynamic,
             targets: ["CPFExtension"]),
     ],
     dependencies: [
-        .package(url: "https://github.com/Loadar/CPFChain.git", from: Version(stringLiteral: "2.2.5")),
+        .package(url: "https://github.com/Loadar/CPFChain.git", from: Version(stringLiteral: "2.2.6")),
     ],
     targets: [
         .target(
             name: "CPFExtension",
-            dependencies: ["CPFChain"],
+            dependencies: [.product(name: "CPFChainDynamic", package: "CPFChain")],
             path: "Sources",
             resources: [.copy("PrivacyInfo.xcprivacy")]
         ),
