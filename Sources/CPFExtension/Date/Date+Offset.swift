@@ -14,6 +14,12 @@ public extension Cpf where Wrapped == Date {
     /// 一天的秒数(60 * 60 * 24s)，方便用于计算
     static var secondsOfOneDay: TimeInterval { 86400 }
     
+    /// 前天
+    static var dayBeforYesterday: Date {
+        let date = Date(timeIntervalSinceNow: secondsOfOneDay * -2)
+        return Util.calendar.startOfDay(for: date)
+    }
+    
     /// 昨天
     static var yesterday: Date {
         let date = Date(timeIntervalSinceNow: secondsOfOneDay * -1)

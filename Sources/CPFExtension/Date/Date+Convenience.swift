@@ -13,6 +13,11 @@ public extension Date {
         self.cpf.secondsOfOneDay
     }
     
+    /// 前天
+    static var cpfDayBeforYesterday: Date {
+        self.cpf.dayBeforYesterday
+    }
+
     /// 昨天
     static var cpfYesterday: Date {
         self.cpf.yesterday
