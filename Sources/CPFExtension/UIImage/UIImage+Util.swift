@@ -53,6 +53,13 @@ public extension UIImage {
         layer.bounds = rect
         if let cornerRadius = radius {
             layer.cornerRadius = cornerRadius
+            
+            if #available(iOS 13.0, *) {
+                // 高系统版本时，指定圆角curve类型
+                layer.cornerCurve = .circular
+            } else {
+                // do nothing
+            }
         }
         if let (width, borderColor) = border {
             layer.borderColor = borderColor.cgColor

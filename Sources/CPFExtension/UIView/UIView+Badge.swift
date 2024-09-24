@@ -38,6 +38,12 @@ extension UIView {
         // attributes
         cpf_badgeView?.backgroundColor = color
         cpf_badgeView?.layer.cornerRadius = radius
+        
+        if #available(iOS 13.0, *) {
+            cpf_badgeView?.layer.cornerCurve = .circular
+        } else {
+            // do nothing
+        }
 
         // 自定义配置
         if let badgeView = cpf_badgeView, let configureClosure = handler {
@@ -89,6 +95,11 @@ extension UIView {
         
         let radius = min(badgeFrame.width, badgeFrame.height) / 2
         label.layer.cornerRadius = radius
+        if #available(iOS 13.0, *) {
+            label.layer.cornerCurve = .circular
+        } else {
+            // do nothing
+        }
         
         // 自定义配置
         handler?(label)
@@ -135,6 +146,11 @@ extension UIView {
         
         let radius = min(badgeFrame.width, badgeFrame.height) / 2
         label.layer.cornerRadius = radius
+        if #available(iOS 13.0, *) {
+            label.layer.cornerCurve = .circular
+        } else {
+            // do nothing
+        }
         
         // 自定义配置
         handler?(label)
