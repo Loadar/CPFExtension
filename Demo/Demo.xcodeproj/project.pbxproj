@@ -7,8 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		938F4FBE2A2EE29A00B8E380 /* CPFExtension-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 938F4FBD2A2EE29A00B8E380 /* CPFExtension-Dynamic */; };
-		938F4FBF2A2EE29A00B8E380 /* CPFExtension-Dynamic in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 938F4FBD2A2EE29A00B8E380 /* CPFExtension-Dynamic */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		937005072CB677CC009E4936 /* CPFExtensionDynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 937005062CB677CC009E4936 /* CPFExtensionDynamic */; };
+		937005082CB677CC009E4936 /* CPFExtensionDynamic in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 937005062CB677CC009E4936 /* CPFExtensionDynamic */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		9370050B2CB6789D009E4936 /* CPFChainDynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 9370050A2CB6789D009E4936 /* CPFChainDynamic */; };
+		9370050C2CB67A61009E4936 /* CPFChainDynamic in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 9370050A2CB6789D009E4936 /* CPFChainDynamic */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		938F4FC52A2EE3D100B8E380 /* CPFExtension.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 938F4FC42A2EE3D100B8E380 /* CPFExtension.podspec */; };
 		93D63A7A2A29DEDD0099F919 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D63A792A29DEDD0099F919 /* AppDelegate.swift */; };
 		93D63A7C2A29DEDD0099F919 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D63A7B2A29DEDD0099F919 /* SceneDelegate.swift */; };
@@ -25,7 +27,8 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				938F4FBF2A2EE29A00B8E380 /* CPFExtension-Dynamic in Embed Frameworks */,
+				9370050C2CB67A61009E4936 /* CPFChainDynamic in Embed Frameworks */,
+				937005082CB677CC009E4936 /* CPFExtensionDynamic in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -50,7 +53,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				938F4FBE2A2EE29A00B8E380 /* CPFExtension-Dynamic in Frameworks */,
+				9370050B2CB6789D009E4936 /* CPFChainDynamic in Frameworks */,
+				937005072CB677CC009E4936 /* CPFExtensionDynamic in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -131,7 +135,8 @@
 			);
 			name = Demo;
 			packageProductDependencies = (
-				938F4FBD2A2EE29A00B8E380 /* CPFExtension-Dynamic */,
+				937005062CB677CC009E4936 /* CPFExtensionDynamic */,
+				9370050A2CB6789D009E4936 /* CPFChainDynamic */,
 			);
 			productName = Demo;
 			productReference = 93D63A762A29DEDD0099F919 /* Demo.app */;
@@ -161,6 +166,8 @@
 				Base,
 			);
 			mainGroup = 93D63A6D2A29DEDD0099F919;
+			packageReferences = (
+			);
 			productRefGroup = 93D63A772A29DEDD0099F919 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -338,6 +345,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 628CHGGHXP;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Demo/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -345,6 +353,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -365,6 +374,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 628CHGGHXP;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Demo/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -372,6 +382,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -409,9 +420,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		938F4FBD2A2EE29A00B8E380 /* CPFExtension-Dynamic */ = {
+		937005062CB677CC009E4936 /* CPFExtensionDynamic */ = {
 			isa = XCSwiftPackageProductDependency;
-			productName = "CPFExtension-Dynamic";
+			productName = CPFExtensionDynamic;
+		};
+		9370050A2CB6789D009E4936 /* CPFChainDynamic */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = CPFChainDynamic;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
