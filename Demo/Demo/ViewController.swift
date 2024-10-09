@@ -7,6 +7,7 @@
 
 import UIKit
 import CPFExtension
+import CPFChain
 
 class ViewController: UIViewController {
     
