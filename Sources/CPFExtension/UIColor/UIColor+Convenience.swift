@@ -13,6 +13,13 @@ extension UIColor {
     ///
     /// - Parameter string: 十六进制字符串，长度为6或8(包含alpha)
     public convenience init(hex string: String) {
+        
+        /// 缓存
+        if let cachedColor = Util.shared.colorCache.object(forKey: string as NSString) {
+            self.init(cgColor: cachedColor.cgColor)
+            return
+        }
+        
         let length = string.lengthOfBytes(using: .utf8)
         guard (length == 6 || length == 8) else {
             // 字符串长度错误，返回clear color
@@ -42,6 +49,8 @@ extension UIColor {
         let alpha = hexNumber & 0x000000ff
         
         self.init(red: CGFloat(red) / 255.0, green: CGFloat(green) / 255.0, blue: CGFloat(blue) / 255.0, alpha: CGFloat(alpha) / 255.0)
+        
+        Util.shared.colorCache.setObject(self, forKey: string as NSString)
     }
     
     /// 十六进制颜色字符串生成UIColor对象

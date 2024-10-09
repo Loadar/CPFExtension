@@ -1,5 +1,5 @@
 //
-//  CPFGradient+CPf.swift
+//  CPFGradient+Cpf.swift
 //  CPFExtensions
 //
 //  Created by Aaron on 2018/4/26.

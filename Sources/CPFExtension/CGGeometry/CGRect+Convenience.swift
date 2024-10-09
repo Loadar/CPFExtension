@@ -16,7 +16,7 @@ public extension CGRect {
     }
 }
 
-extension CGRect: CpfCompatible {}
+extension CGRect: @retroactive CpfCompatible {}
 
 public extension Cpf where Wrapped == CGRect {
     /// 根据指定insets调整rect

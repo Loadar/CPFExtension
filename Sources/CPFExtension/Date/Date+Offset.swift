@@ -8,31 +8,31 @@
 import Foundation
 import CPFChain
 
-extension Date: CpfCompatible {}
+extension Date: @retroactive CpfCompatible {}
 
-public extension Cpf where Wrapped == Date {
+public extension Cpf where Wrapped == Date.Type {
     /// 一天的秒数(60 * 60 * 24s)，方便用于计算
-    static var secondsOfOneDay: TimeInterval { 86400 }
+    var secondsOfOneDay: TimeInterval { 86400 }
     
     /// 前天
-    static var dayBeforYesterday: Date {
+    var dayBeforYesterday: Date {
         let date = Date(timeIntervalSinceNow: secondsOfOneDay * -2)
         return Util.calendar.startOfDay(for: date)
     }
     
     /// 昨天
-    static var yesterday: Date {
+    var yesterday: Date {
         let date = Date(timeIntervalSinceNow: secondsOfOneDay * -1)
         return Util.calendar.startOfDay(for: date)
     }
     
     /// 今天
-    static var today: Date {
+    var today: Date {
         return Util.calendar.startOfDay(for: Date())
     }
     
     /// 明天
-    static var tommorow: Date {
+    var tommorow: Date {
         return Util.calendar.startOfDay(for: Date(timeIntervalSinceNow: secondsOfOneDay))
     }
 }
@@ -52,7 +52,7 @@ public extension Cpf where Wrapped == Date {
                 newDate = theDate
             } else {
                 // 使用calendar获取失败时，直接使用时间偏移来计算
-                newDate = Date(timeInterval: Self.secondsOfOneDay * Double(offset), since: wrapped)
+                newDate = Date(timeInterval: Date.cpf.secondsOfOneDay * Double(offset), since: wrapped)
             }
             return newDate
         }()
@@ -77,7 +77,7 @@ public extension Cpf where Wrapped == Date {
                 newDate = theDate
             } else {
                 // 使用calendar获取失败时，直接使用时间偏移来计算, 不太好指定月，默认为30天
-                let allSeconds = Self.secondsOfOneDay * Double(offset * 30)
+                let allSeconds = Date.cpf.secondsOfOneDay * Double(offset * 30)
                 newDate = Date(timeInterval: allSeconds, since: wrapped)
             }
             return newDate
@@ -103,7 +103,7 @@ public extension Cpf where Wrapped == Date {
                 newDate = theDate
             } else {
                 // 使用calendar获取失败时，直接使用时间偏移来计算, 不太好指定年，默认为365天
-                let allSeconds = Self.secondsOfOneDay * Double(offset * 365)
+                let allSeconds = Date.cpf.secondsOfOneDay * Double(offset * 365)
                 newDate = Date(timeInterval: allSeconds, since: wrapped)
             }
             return newDate

@@ -29,7 +29,7 @@ public extension CGPoint {
     }
 }
 
-extension CGPoint: CpfCompatible {}
+extension CGPoint: @retroactive CpfCompatible {}
 
 public extension Cpf where Wrapped == CGPoint {
     /// 值转换

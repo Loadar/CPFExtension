@@ -45,21 +45,31 @@ public class Util {
         return formatter
     }
     
+    /// 颜色缓存
+    var colorCache = NSCache<NSString, UIColor>()
+    
     // 默认statusBar，tabBar高度统一
+    
+    @available(*, deprecated, message: "请使用安全区域布局")
     private var isIPhoneX: Bool?
+    @available(*, deprecated, message: "请使用安全区域布局")
     private var statusHeight: CGFloat?
+    @available(*, deprecated, message: "请使用安全区域布局")
     private var tabBarHeight: CGFloat?
     
     public class var screenRect: CGRect { return UIScreen.main.bounds }
     public class var screenSize: CGSize { return screenRect.size }
     public class var screenWidth: CGFloat { return screenRect.width }
     public class var screenHeight: CGFloat { return screenRect.height }
+    
+    @available(*, deprecated, message: "请使用安全区域布局")
     public class var statusBarHeight: CGFloat {
         // 使用指定默认值, iPhoneX系列默认44， 其他默认20
         return isIPhoneX ? 44 : 20
     }
     
     // 根据安全区域判定是否iPhoneX
+    @available(*, deprecated, message: "请使用安全区域布局")
     public class var isIPhoneX: Bool {
         if let status = shared.isIPhoneX { return status }
         
@@ -76,11 +86,13 @@ public class Util {
         return status
     }
     
+    @available(*, deprecated, message: "请使用安全区域布局")
     public class var topAdjustHeight: CGFloat {
         // iPhoneX顶部控件高度需要调整
         return statusBarHeight - 20
     }
     
+    @available(*, deprecated, message: "请使用安全区域布局")
     public class var bottomAdjustHeight: CGFloat {
         
         // 优先从安全区域内取值
@@ -97,6 +109,7 @@ public class Util {
     }
     
     // 取root viewController处理
+    @available(*, deprecated, message: "请使用安全区域布局")
     public class var tabBarHeight: CGFloat {
         if let height = shared.tabBarHeight { return height }
         guard let controller = UIApplication.shared.keyWindow?.rootViewController as? UITabBarController else { return 0 }
@@ -109,6 +122,7 @@ public class Util {
 }
 
 extension Util {
+    @available(*, deprecated, message: "需要兼容multiple scenes，请谨慎使用")
     public class var topController: UIViewController? {
         var controller = UIApplication.shared.keyWindow?.rootViewController
         while let aController = controller?.presentedViewController {
@@ -119,6 +133,7 @@ extension Util {
 }
 
 extension Util {
+    @available(*, deprecated, message: "需要兼容M系列芯片的模拟器判定")
     public class var isSimulator: Bool {
         var isSimulator = false
         #if arch(i386) || arch(x86_64)

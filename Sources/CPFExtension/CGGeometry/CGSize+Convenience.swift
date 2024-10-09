@@ -21,7 +21,7 @@ public extension CGSize {
     }
 }
 
-extension CGSize: CpfCompatible {}
+extension CGSize: @retroactive CpfCompatible {}
 
 public extension Cpf where Wrapped == CGSize {
     /// 值转换

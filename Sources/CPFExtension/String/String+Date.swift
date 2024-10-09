@@ -9,7 +9,7 @@
 import Foundation
 import CPFChain
 
-extension String: CpfCompatible {}
+extension String: @retroactive CpfCompatible {}
 
 public extension Cpf where Wrapped == String {
     /// 字符串转换成日期

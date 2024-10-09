@@ -21,7 +21,7 @@ extension Array: AnyCpfArray {
     
 }
 
-extension Array: CpfCompatible {}
+extension Array: @retroactive CpfCompatible {}
 
 public extension Cpf where Wrapped: AnyCpfArray {
     /// 返回数组指定索引的元素，不存在时返回nil

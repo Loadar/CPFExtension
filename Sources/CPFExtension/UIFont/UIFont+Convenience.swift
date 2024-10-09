@@ -25,7 +25,7 @@ public extension UIFont {
 }
 
 public struct CPFFontName {
-    // 由于UIFont.Weight枚举仅支持iOS8.2以上，实现自定义的枚举
+    // 由于UIFont.Weight枚举可能涉及到不同系统版本等复杂判定，自定义一个Weight枚举来处理字重
     public enum Weight: String {
         case ultraLight = "UltraLight"
         case thin = "Thin"
